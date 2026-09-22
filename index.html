@@ -533,5 +533,94 @@
     gtag('config', 'AW-725894749');
     </script>
 
+    <!-- WHATSAPP FLOTANTE ESTACIÓN 180 -->
+    <a
+        href="https://wa.me/51999014976?text=Hola%20Estaci%C3%B3n%20180%2C%20deseo%20realizar%20un%20pedido."
+        class="whatsapp-flotante"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Pedir por WhatsApp"
+    >
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor" d="M16.04 2.003c-7.72 0-13.996 6.275-13.996 13.994 0 2.467.644 4.875 1.866 6.997L1.93 30.22l7.394-1.94a13.93 13.93 0 0 0 6.71 1.708h.006c7.717 0 14.002-6.276 14.002-13.995 0-3.74-1.457-7.255-4.1-9.9a13.91 13.91 0 0 0-9.902-4.09Zm0 25.622h-.005a11.59 11.59 0 0 1-5.91-1.618l-.423-.25-4.388 1.15 1.171-4.277-.276-.439a11.6 11.6 0 0 1-1.785-6.194c0-6.408 5.211-11.62 11.621-11.62 3.103 0 6.02 1.21 8.213 3.405a11.54 11.54 0 0 1 3.405 8.215c-.003 6.408-5.216 11.628-11.623 11.628Zm6.373-8.706c-.35-.175-2.067-1.02-2.387-1.137-.32-.116-.553-.175-.786.175-.233.35-.903 1.137-1.107 1.37-.204.234-.408.263-.757.088-.35-.175-1.475-.544-2.81-1.734-1.039-.927-1.74-2.072-1.944-2.422-.204-.35-.022-.539.153-.713.157-.157.35-.408.524-.612.175-.204.233-.35.35-.583.116-.233.058-.437-.03-.612-.087-.175-.786-1.895-1.078-2.596-.284-.682-.573-.59-.786-.601l-.67-.012c-.233 0-.612.087-.932.437-.32.35-1.223 1.195-1.223 2.914 0 1.72 1.252 3.38 1.427 3.613.175.233 2.464 3.762 5.97 5.276.834.36 1.485.575 1.992.736.837.266 1.599.228 2.201.138.672-.1 2.067-.845 2.358-1.661.292-.816.292-1.516.204-1.661-.087-.146-.32-.233-.67-.408Z"/>
+        </svg>
+
+        <span>Haz tu pedido</span>
+    </a>
+
+    <style>
+    .whatsapp-flotante {
+        position: fixed !important;
+        right: 24px !important;
+        bottom: 24px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+
+        padding: 12px 18px !important;
+
+        background: #25D366 !important;
+        color: #ffffff !important;
+
+        border-radius: 50px !important;
+        text-decoration: none !important;
+
+        font-family: Arial, sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+
+        box-shadow:
+            0 8px 25px rgba(0,0,0,.40),
+            0 0 18px rgba(37,211,102,.20) !important;
+
+        z-index: 99999999 !important;
+
+        transition:
+            transform .2s ease,
+            box-shadow .2s ease !important;
+    }
+
+    .whatsapp-flotante svg {
+        width: 31px !important;
+        height: 31px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .whatsapp-flotante:hover {
+        transform: translateY(-3px) scale(1.03) !important;
+
+        box-shadow:
+            0 12px 30px rgba(0,0,0,.45),
+            0 0 22px rgba(37,211,102,.35) !important;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 750px) {
+
+        .whatsapp-flotante {
+            right: 15px !important;
+            bottom: 18px !important;
+
+            width: 58px !important;
+            height: 58px !important;
+
+            padding: 0 !important;
+
+            justify-content: center !important;
+
+            border-radius: 50% !important;
+        }
+
+        .whatsapp-flotante svg {
+            width: 34px !important;
+            height: 34px !important;
+        }
+
+        .whatsapp-flotante span {
+            display: none !important;
+        }
+    }
+    </style>
 </body>
 </html>
