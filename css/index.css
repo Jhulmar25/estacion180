@@ -1,0 +1,5919 @@
+    @font-face {
+      font-family: neuropol;
+      src: url("../font/neuropol-webfont.eot");
+      src: url("../font/neuropol-webfont.eot%3F") format("embedded-opentype"), url("../font/neuropol-webfont.woff2") format("woff2"), url("../font/neuropol-webfont.woff") format("woff"), url("../font/neuropol-webfont.ttf") format("truetype"), url("../font/neuropol-webfont.svg") format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: bombardier;
+      src: url("../font/bombard-webfont.eot");
+      src: url("../font/bombard-webfont.eot%3F") format("embedded-opentype"), url("../font/bombard-webfont.woff2") format("woff2"), url("../font/bombard-webfont.woff") format("woff"), url("../font/bombard-webfont.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: helve;
+      src: url("../font/helvne_0-webfont.eot");
+      src: url("../font/helvne_0-webfont.eot%3F") format("embedded-opentype"), url("../font/helvne_0-webfont.woff2") format("woff2"), url("../font/helvne_0-webfont.woff") format("woff"), url("../font/helvne_0-webfont.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+    }
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .modal {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 1000; /* Encima*/
+      left: 0;
+      top: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .modal .preloader {
+      width: 100%;
+      height: 100%;
+      background-color: #c32821;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    .modal .preloader .carga {
+      width: 90px;
+      height: 90px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-animation: giro-carga 1.5s linear infinite;
+              animation: giro-carga 1.5s linear infinite;
+    }
+    .modal .preloader .carga .corte {
+      width: 100%;
+      height: 30px;
+      background-color: #c32821;
+    }
+    .modal .preloader .amarillo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -40px;
+      margin-left: -40px;
+      width: 80px;
+      height: 80px;
+      background-color: #c32821;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      border-radius: 50%;
+    }
+    .modal .preloader .amarillo .circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #efa01a;
+      background-image: url(../img/load-icon.png);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    .modal .preloader .amarillo .circle img {
+      -webkit-animation: cerveza 0.5s linear infinite alternate;
+              animation: cerveza 0.5s linear infinite alternate;
+    }
+
+    @-webkit-keyframes giro-carga {
+      0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+
+    @keyframes giro-carga {
+      0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes cerveza {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(1.25, 1.25);
+                transform: scale(1.25, 1.25);
+      }
+    }
+    @keyframes cerveza {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(1.25, 1.25);
+                transform: scale(1.25, 1.25);
+      }
+    }
+    .cerrar-modal {
+      -webkit-animation: cerrar-modal 0.8s 1 forwards;
+              animation: cerrar-modal 0.8s 1 forwards;
+    }
+
+    @-webkit-keyframes cerrar-modal {
+      0% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 100%;
+        height: 100%;
+      }
+      50% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 0;
+        height: 100%;
+      }
+      100% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 0;
+        height: 0;
+      }
+    }
+
+    @keyframes cerrar-modal {
+      0% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 100%;
+        height: 100%;
+      }
+      50% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 0;
+        height: 100%;
+      }
+      100% {
+        -webkit-transform: skew(30deg);
+                transform: skew(30deg);
+        width: 0;
+        height: 0;
+      }
+    }
+    .modal-menu {
+      width: 100%;
+      height: 0;
+      background-image: url(../img/fondo-modal.png);
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 100;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      overflow: hidden;
+    }
+    .modal-menu .nav-dos {
+      width: 700px;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+    .modal-menu .nav-dos a {
+      cursor: pointer;
+      text-align: center;
+      width: 120px;
+    }
+    .modal-menu .nav-dos a img {
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      margin-bottom: -5px;
+      -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+              transform: scale(0);
+    }
+    .modal-menu .nav-dos a:hover img {
+      margin-top: -10px;
+      margin-bottom: 5px;
+    }
+    .modal-menu .nav-dos a .sombra {
+      display: inline-block;
+      width: 73px;
+      height: 12px;
+      background-image: url(../img/sombra-icon.png);
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      opacity: 0.7;
+      -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+              transform: scale(0);
+    }
+    .modal-menu .nav-dos a h2 {
+      font-family: bombardier;
+      color: #efa01a;
+      font-size: 22px;
+      margin: 0;
+      font-weight: normal;
+      -webkit-transform: translateY(30px);
+          -ms-transform: translateY(30px);
+              transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .modal-menu-fade {
+      -webkit-animation: abrir-modal 0.4s linear 1 forwards;
+              animation: abrir-modal 0.4s linear 1 forwards;
+    }
+
+    .icon-animate {
+      -webkit-animation: crecer 0.7s linear 1 forwards;
+              animation: crecer 0.7s linear 1 forwards;
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+    }
+
+    .text-animate {
+      -webkit-animation: texto-menu 0.7s linear 1 forwards;
+              animation: texto-menu 0.7s linear 1 forwards;
+      -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s;
+    }
+
+    .modal-menu-fadeout {
+      -webkit-animation: abrir-modalout 0.8s linear 1 forwards;
+              animation: abrir-modalout 0.8s linear 1 forwards;
+    }
+
+    .icon-animateout {
+      -webkit-animation: crecerout 0.5s linear 1 forwards;
+              animation: crecerout 0.5s linear 1 forwards;
+    }
+
+    .text-animateout {
+      -webkit-animation: texto-menuout 0.5s linear 1 forwards;
+              animation: texto-menuout 0.5s linear 1 forwards;
+    }
+
+    @-webkit-keyframes crecer {
+      0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+      }
+      100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+    }
+
+    @keyframes crecer {
+      0% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+      }
+      100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+    }
+    @-webkit-keyframes abrir-modal {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @keyframes abrir-modal {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: 100%;
+      }
+    }
+    @-webkit-keyframes texto-menu {
+      0% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+      60% {
+        -webkit-transform: translateY(15px);
+                transform: translateY(15px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes texto-menu {
+      0% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+      60% {
+        -webkit-transform: translateY(15px);
+                transform: translateY(15px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @-webkit-keyframes crecerout {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+      }
+    }
+    @keyframes crecerout {
+      0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(0);
+                transform: scale(0);
+      }
+    }
+    @-webkit-keyframes abrir-modalout {
+      0% {
+        height: 100%;
+      }
+      50% {
+        height: 100%;
+      }
+      100% {
+        height: 0;
+      }
+    }
+    @keyframes abrir-modalout {
+      0% {
+        height: 100%;
+      }
+      50% {
+        height: 100%;
+      }
+      100% {
+        height: 0;
+      }
+    }
+    @-webkit-keyframes texto-menuout {
+      0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        -webkit-transform: translateY(15px);
+                transform: translateY(15px);
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+    }
+    @keyframes texto-menuout {
+      0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+      }
+      50% {
+        -webkit-transform: translateY(15px);
+                transform: translateY(15px);
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+    }
+    #fullpage {
+      /*------------------header-------------------------------*/
+      /*------------------header-------------------------------*/
+    }
+    #fullpage .box-carro {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 350px;
+      height: 100vh;
+      background-color: #fff;
+      position: fixed;
+      right: -350px;
+      top: 0;
+      z-index: 100;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      padding-top: 110px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-content: space-between;
+          -ms-flex-line-pack: justify;
+              align-content: space-between;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    #fullpage .box-carro .lista {
+      width: 90%;
+      height: auto;
+    }
+    #fullpage .box-carro .lista li {
+      width: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      background-color: #c32821;
+      padding: 10px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage .box-carro .lista li span {
+      font-family: bombardier;
+      color: #fff;
+      font-size: 22px;
+    }
+    #fullpage .box-carro .lista li .cerrar-prod {
+      cursor: pointer;
+    }
+    #fullpage .box-carro .comprar {
+      width: 90%;
+      height: 120px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      border-top: 2px solid #c32821;
+      text-align: center;
+    }
+    #fullpage .box-carro .comprar ul {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    #fullpage .box-carro .comprar ul li {
+      padding: 10px;
+      color: #c32821;
+      font-family: helve;
+      font-size: 14px;
+    }
+    #fullpage .box-carro .comprar .boton-comprar {
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 40px;
+      background-color: #c32821;
+      font-family: bombardier;
+      font-size: 24px;
+      color: #efa01a;
+      text-align: left;
+      padding: 7px 0 0 35px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage .box-carro .comprar .boton-comprar .tri-comprar {
+      width: 40px;
+      height: 30px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+      background-image: url(../img/icon-comprar.png);
+      border-left: 2px solid #6d0505;
+    }
+    #fullpage .box-carro-click {
+      right: 0;
+    }
+    #fullpage header {
+      position: absolute;
+      height: 100px;
+      width: 100%;
+      background-color: #efa01a;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 100;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-transition: all 0.6s;
+      transition: all 0.6s;
+    }
+    #fullpage header .logo {
+      height: 100px;
+      background-color: #fff;
+      width: 220px;
+      margin-left: -30px;
+      text-align: center;
+      padding-top: 15px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-transform: skew(-30deg);
+          -ms-transform: skew(-30deg);
+              transform: skew(-30deg);
+    }
+    #fullpage header .logo img {
+      -webkit-transform: skew(30deg);
+          -ms-transform: skew(30deg);
+              transform: skew(30deg);
+    }
+    #fullpage header .logo2 {
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: none;
+      width: 220px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage header .logo3 {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 220px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage header nav.nav {
+      margin-right: 30px;
+    }
+    #fullpage header nav.nav .ul-scroll {
+      width: 260px;
+    }
+    #fullpage header nav.nav ul {
+      margin: 0;
+      padding: 0;
+      width: 180px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      list-style: none;
+    }
+    #fullpage header nav.nav ul li {
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+    }
+    #fullpage header nav.nav ul .redes4 {
+      height: 35px;
+      padding: 10px;
+      width: 45px;
+      position: relative;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    #fullpage header nav.nav ul .redes4 .pro-numero {
+      position: absolute;
+      right: -10px;
+      top: 23px;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 11px solid #c32821;
+    }
+    #fullpage header nav.nav ul .menu-bar {
+      width: 35px;
+      margin-left: 40px;
+      height: 18px;
+      cursor: pointer;
+      display: none;
+      text-align: center;
+    }
+    #fullpage header nav.nav ul .menu-bar .lin-bar {
+      border-radius: 3px;
+      width: 35px;
+      height: 4px;
+      background-color: #c32821;
+      margin-bottom: 3px;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    #fullpage header nav.nav ul .menu-bar .lin-uno-click {
+      -webkit-transform: translateY(5px) rotate(405deg);
+          -ms-transform: translateY(5px) rotate(405deg);
+              transform: translateY(5px) rotate(405deg);
+    }
+    #fullpage header nav.nav ul .menu-bar .lin-tres-click {
+      -webkit-transform: translateY(-2px) rotate(-405deg);
+          -ms-transform: translateY(-2px) rotate(-405deg);
+              transform: translateY(-2px) rotate(-405deg);
+    }
+    #fullpage header nav.nav ul .menu-bar-block {
+      display: block;
+    }
+    #fullpage .telf {
+      position: absolute;
+      width: 440px;
+      color: #fff;
+      text-align: center;
+      z-index: 110;
+      font-family: bombardier;
+      font-size: 26px;
+      margin: 0;
+      left: 50%;
+      margin-left: -220px;
+      top: 40px;
+    }
+    #fullpage .telf span {
+      color: #c32821;
+    }
+    #fullpage .header2 {
+      position: fixed;
+      height: 60px;
+      background-color: #fff;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    #fullpage .home {
+      background-image: url(../img/fondo-desktop.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    #fullpage .home .pareja {
+      width: 35%;
+      position: absolute;
+      bottom: -4px;
+      left: 40px;
+      -webkit-transform: translateY(100%);
+          -ms-transform: translateY(100%);
+              transform: translateY(100%);
+      -webkit-transition: all 0.8s;
+      transition: all 0.8s;
+      -webkit-transition-delay: 0.3s;
+              transition-delay: 0.3s;
+    }
+    #fullpage .home .pareja img {
+      width: 100%;
+      max-width: 100%;
+    }
+    #fullpage .home .apareja {
+      -webkit-transform: translateY(0);
+          -ms-transform: translateY(0);
+              transform: translateY(0);
+    }
+    #fullpage .home .content {
+      position: absolute;
+      right: 0;
+      width: 50%;
+      bottom: 0;
+      height: auto;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+    #fullpage .home .content .frase {
+      width: 60%;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    #fullpage .home .content .frase img {
+      width: 100%;
+      max-width: 100%;
+      opacity: 0;
+    }
+    #fullpage .home .content .frase .haz-tu-pedido {
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      width: 160px;
+      position: absolute;
+      left: -230px;
+      top: 0;
+      text-align: center;
+      font-family: bombardier;
+      font-size: 59px;
+      color: #efa01a;
+      line-height: 36px;
+      text-shadow: 3px 3px 0.3px rgba(0, 0, 0, 0.3);
+    }
+    #fullpage .home .content .frase .haz-tu-pedido span {
+      color: #fff;
+      font-size: 26px;
+    }
+    #fullpage .home .content .frase .haz-tu-pedido .triangulo {
+      position: absolute;
+      width: 40px;
+      height: 45px;
+      background-image: url(../img/trian-home.png);
+      right: -70px;
+      top: 50%;
+      margin-top: -16px;
+      font-family: helve;
+      text-align: center;
+      font-size: 18px;
+      padding: 7px 14px 0 0;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage .home .content .nav-dos {
+      width: 500px;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+    #fullpage .home .content .nav-dos a {
+      cursor: pointer;
+      text-align: center;
+      width: 120px;
+    }
+    #fullpage .home .content .nav-dos a img {
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      margin-bottom: -5px;
+      -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+              transform: scale(0);
+    }
+    #fullpage .home .content .nav-dos a:hover img {
+      margin-top: -10px;
+      margin-bottom: 5px;
+    }
+    #fullpage .home .content .nav-dos a .me-img.icon-animate {
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s;
+    }
+    #fullpage .home .content .nav-dos a .sombrita {
+      display: inline-block;
+      width: 73px;
+      height: 12px;
+      background-image: url(../img/sombra-icon.png);
+      -webkit-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+      opacity: 0.7;
+      -webkit-transform: scale(0);
+          -ms-transform: scale(0);
+              transform: scale(0);
+    }
+    #fullpage .home .content .nav-dos a .sombrita.icon-animate {
+      -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s;
+    }
+    #fullpage .home .content .nav-dos a h2 {
+      font-family: bombardier;
+      color: #efa01a;
+      font-size: 22px;
+      margin: 0;
+      font-weight: normal;
+      -webkit-transform: translateY(30px);
+          -ms-transform: translateY(30px);
+              transform: translateY(30px);
+      opacity: 0;
+    }
+    #fullpage .como-pedir {
+      background-color: #efa01a;
+    }
+    #fullpage .como-pedir .wrapper {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper {
+      padding-top: 80px;
+      width: 90%;
+      height: 570px;
+      max-width: 1200px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .titulo {
+      -webkit-transform: rotate(-2deg);
+          -ms-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+      position: relative;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #efa01a;
+      font-family: bombardier;
+      font-size: 24px;
+      background-image: url(../img/lazo-rojo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 59px;
+      width: 100%;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .titulo .interro {
+      font-size: 50px;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .titulo .tri-rojo {
+      width: 35px;
+      height: 30px;
+      position: absolute;
+      background-image: url(../img/triangulo-rojo.png);
+      bottom: -33px;
+      left: 50%;
+      margin-left: -17.5px;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos {
+      width: 48%;
+      height: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos {
+      display: inline-block;
+      width: 200px;
+      height: auto;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos img {
+      width: 100%;
+      max-width: 100%;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos {
+      display: block;
+      width: 35px;
+      height: 30px;
+      -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos img {
+      width: 100%;
+      max-width: 100%;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .info-pasos {
+      font-family: bombardier;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 22px;
+      width: 250px;
+    }
+    #fullpage .zonas {
+      background-image: url(../img/fondo-zonas.png);
+      background-size: cover;
+      background-position: 0px 0px;
+    }
+    #fullpage .zonas .wrapper {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper {
+      padding-top: 70px;
+      width: 90%;
+      height: 580px;
+      max-width: 1100px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo {
+      -webkit-transform: rotate(-2deg);
+          -ms-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+      position: relative;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-image: url(../img/lazo-amarillo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 59px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo h2 {
+      position: relative;
+      display: inline-block;
+      font-weight: normal;
+      color: #c32821;
+      font-family: bombardier;
+      font-size: 30px;
+      width: 230px;
+      margin: 0;
+      padding: 0;
+      margin-top: 16px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub {
+      position: absolute;
+      left: -60px;
+      top: 0;
+      width: 22px;
+      height: 32px;
+      background-image: url(../img/iso-ubicacion.png);
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub2 {
+      position: absolute;
+      right: -60px;
+      top: 0;
+      width: 22px;
+      height: 32px;
+      background-image: url(../img/iso-ubicacion.png);
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo .tri-rojo {
+      width: 35px;
+      height: 30px;
+      position: absolute;
+      background-image: url(../img/triangulo-amarillo.png);
+      bottom: -33px;
+      left: 50%;
+      margin-left: -17.5px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos {
+      width: 48%;
+      height: 450px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos p {
+      color: #fff;
+      font-family: helvetica;
+      font-size: 17px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov {
+      display: none;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos ul {
+      margin: 0;
+      padding: 0;
+      width: 48%;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos ul li {
+      font-family: bombardier;
+      font-size: 34px;
+      color: #efa01a;
+      position: relative;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos ul li span {
+      position: absolute;
+      left: -35px;
+      top: 5px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding-top: 4px;
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-image: url(../img/distritos-icon.png);
+      font-size: 18px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .borja,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .isidro,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .luis,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .miguel,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .surco,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-uno .surquillo {
+      display: none;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .barranco,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .jesus,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .molina,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .lince,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .magdalena,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .miraflores,
+    #fullpage .zonas .wrapper .sub-wrapper .lista-dos .pueblo {
+      display: none;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .lista-tres {
+      display: none;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa {
+      position: relative;
+      width: 490px;
+      height: auto;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa img {
+      width: 100%;
+      max-width: 100%;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa span {
+      width: 22px;
+      position: absolute;
+      left: 195px;
+      top: 345px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa span img {
+      width: 100%;
+      max-width: 100%;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .dos {
+      width: 26px;
+      left: 165px;
+      top: 270px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .tres {
+      width: 38px;
+      left: 300px;
+      top: 280px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .cuatro {
+      width: 28px;
+      left: 184px;
+      top: 280px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .cinco {
+      width: 20px;
+      left: 145px;
+      top: 300px;
+      z-index: 10;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .seis {
+      width: 22px;
+      left: 178px;
+      top: 325px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .siete {
+      width: 25px;
+      left: 142px;
+      top: 268px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .ocho {
+      width: 22px;
+      left: 225px;
+      top: 305px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .nueve {
+      width: 22px;
+      left: 165px;
+      top: 302px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .diez {
+      width: 26px;
+      left: 220px;
+      top: 270px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .once {
+      width: 32px;
+      left: 110px;
+      top: 270px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .doce {
+      width: 32px;
+      left: 220px;
+      top: 340px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .trece {
+      width: 24px;
+      left: 199px;
+      top: 310px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .mapa .numeros-anim {
+      -webkit-animation: salto 0.5s infinite alternate;
+              animation: salto 0.5s infinite alternate;
+    }
+    #fullpage .contactos {
+      background-color: white;
+      background-image: url(../img/fondo-contactos.png);
+      background-size: cover;
+      background-position: center;
+      padding: 0;
+    }
+    #fullpage .contactos .wrapp {
+      width: 90%;
+      height: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding-top: 70px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+    }
+    #fullpage .contactos .wrapp .formulario {
+      width: 410px;
+      height: auto;
+    }
+    #fullpage .contactos .wrapp .formulario .lazo {
+      -webkit-transform: rotate(-2deg);
+          -ms-transform: rotate(-2deg);
+              transform: rotate(-2deg);
+      width: 100%;
+      position: relative;
+      height: 50px;
+      text-align: center;
+      background-image: url(../img/lazo-contact.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: bombardier;
+      font-size: 30px;
+      padding: 0;
+      margin: 0;
+      padding-top: 10px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      color: #efa01a;
+    }
+    #fullpage .contactos .wrapp .formulario .lazo .tri-rojo {
+      width: 35px;
+      height: 30px;
+      position: absolute;
+      background-image: url(../img/triangulo-rojo.png);
+      bottom: -33px;
+      left: 50%;
+      margin-left: -17.5px;
+    }
+    #fullpage .contactos .wrapp .formulario form {
+      width: 100%;
+      height: auto;
+      margin-top: 42px;
+      text-align: center;
+      /*color placeholder*/
+    }
+    #fullpage .contactos .wrapp .formulario form input {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      width: 100%;
+      padding: 10px 5px;
+      margin-bottom: 8px;
+      border: 1px solid #c32821;
+    }
+    #fullpage .contactos .wrapp .formulario form input:focus {
+      outline: none;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      width: 100%;
+      max-width: 100%;
+      height: 120px;
+      max-height: 120px;
+      border: 1px solid #c32821;
+      padding: 7px 5px;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea:focus {
+      outline: none;
+    }
+    #fullpage .contactos .wrapp .formulario form input::-webkit-input-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form input:-moz-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form input::-moz-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form input:-ms-input-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea::-webkit-input-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea:-moz-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea::-moz-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form textarea:-ms-input-placeholder {
+      color: #c32821;
+      font-size: 12px;
+      font-family: helve;
+    }
+    #fullpage .contactos .wrapp .formulario form #enviar {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      display: inline-block;
+      width: 100px;
+      padding: 10px 0;
+      background-color: #c32821;
+      color: #fff;
+      font-size: 16px;
+      font-family: helve;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #fullpage .contactos .wrapp .contact {
+      width: 400px;
+      text-align: center;
+    }
+    #fullpage .contactos .wrapp .contact h2 {
+      font-family: bombardier;
+      font-weight: normal;
+      font-size: 30px;
+      color: #fff;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    #fullpage .contactos .wrapp .contact h2 span {
+      color: #c32821;
+    }
+    #fullpage .contactos .wrapp .contact .like-box {
+      margin: 0;
+      width: 100%;
+      height: 210px;
+    }
+    #fullpage .contactos .wrapp .contact .like-box .fb-page {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      border: 4px solid #c32821;
+    }
+    #fullpage .contactos footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    #fullpage .contactos footer p {
+      padding: 0;
+      margin: 0;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+    #fullpage .contactos footer .legal {
+      width: 100%;
+      padding: 30px 20px;
+      background-color: #c32821;
+      color: #fff;
+      font-family: helve;
+      font-size: 22px;
+      letter-spacing: 10px;
+      text-align: center;
+    }
+    #fullpage .contactos footer .derechos {
+      width: 100%;
+      padding: 15px 0;
+      background-color: #efa01a;
+      color: #fff;
+      font-family: helve;
+      font-size: 12px;
+      text-align: left;
+      padding-left: 20px;
+    }
+    #fullpage .contactos footer .medstudio {
+      font-family: helve;
+      position: absolute;
+      right: 15px;
+      bottom: 10px;
+      color: #fff;
+      font-size: 12px;
+    }
+    #fullpage .contactos footer .medstudio .med {
+      font-family: neuropol;
+      vertical-align: middle;
+    }
+    #fullpage .contactos footer .medstudio .icon-med {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    @-webkit-keyframes salto {
+      from {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      to {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+      }
+    }
+
+    @keyframes salto {
+      from {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+      }
+      to {
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+      }
+    }
+    @media (max-width: 750px) {
+      .modal-menu .nav-dos {
+        width: 90%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      .modal-menu .nav-dos a {
+        cursor: pointer;
+        text-align: center;
+        width: 120px;
+        margin-top: 20px;
+      }
+      .modal-menu .nav-dos a img {
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        margin-bottom: -5px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      .modal-menu .nav-dos a:hover img {
+        margin-top: -10px;
+        margin-bottom: 5px;
+      }
+      .modal-menu .nav-dos a .sombra {
+        display: inline-block;
+        width: 73px;
+        height: 12px;
+        background-image: url(../img/sombra-icon.png);
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        opacity: 0.7;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      .modal-menu .nav-dos a h2 {
+        font-family: bombardier;
+        color: #efa01a;
+        font-size: 22px;
+        margin: 0;
+        font-weight: normal;
+        -webkit-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+
+      #fullpage {
+        /*------------------header-------------------------------*/
+        /*------------------header-------------------------------*/
+      }
+      #fullpage header {
+        height: 60px;
+      }
+      #fullpage header .logo {
+        opacity: 0;
+      }
+      #fullpage header .logo2 {
+        opacity: 0;
+      }
+      #fullpage header .logo3 {
+        display: block;
+        left: -20px;
+        -webkit-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+                transform: skew(-30deg);
+        background-color: #fff;
+      }
+      #fullpage header .logo3 img {
+        -webkit-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+                transform: skew(30deg);
+      }
+      #fullpage .telf {
+        position: absolute;
+        width: 100%;
+        color: #fff;
+        text-align: center;
+        z-index: 50;
+        font-family: bombardier;
+        font-size: 26px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 0;
+        left: 0;
+        top: 75px;
+      }
+      #fullpage .telf span {
+        color: #efa01a;
+      }
+      #fullpage .home {
+        background-image: url(../img/fondo-750.jpg);
+        background-position: top center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        position: relative;
+        height: 100vh;
+      }
+      #fullpage .home .pareja {
+        display: none;
+      }
+      #fullpage .home .content {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        position: relative;
+        right: none;
+        margin: 0 auto;
+        width: 90%;
+        bottom: none;
+        height: 100%;
+        padding-bottom: 50px;
+        text-align: center;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-align-content: space-between;
+            -ms-flex-line-pack: justify;
+                align-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .home .content .frase {
+        width: 100%;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-top: 230px;
+      }
+      #fullpage .home .content .frase img {
+        width: 75%;
+        max-width: 75%;
+        opacity: 0;
+      }
+      #fullpage .home .content .frase .haz-tu-pedido {
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -85px;
+        text-align: center;
+        font-family: bombardier;
+        font-size: 32px;
+        color: #efa01a;
+        line-height: 36px;
+        text-shadow: 3px 3px 0.3px rgba(0, 0, 0, 0.3);
+      }
+      #fullpage .home .content .frase .haz-tu-pedido span {
+        color: #fff;
+        font-size: 32px;
+      }
+      #fullpage .home .content .frase .haz-tu-pedido .triangulo {
+        width: 45px;
+        height: 40px;
+        background-image: url(../img/trian-home2.png);
+        right: 50%;
+        margin-right: -22.5px;
+        top: 60px;
+        margin-top: -16px;
+        text-align: center;
+        font-size: 18px;
+        padding: 0 5px 0 0;
+      }
+      #fullpage .como-pedir {
+        background-color: #efa01a;
+        position: relative;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        height: auto;
+        padding-bottom: 40px;
+      }
+      #fullpage .como-pedir .wrapper {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1200px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #efa01a;
+        font-family: bombardier;
+        font-size: 24px;
+        background-image: url(../img/lazo-rojo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 70px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .interro {
+        font-size: 50px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-rojo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos {
+        width: 48%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos img {
+        width: 90%;
+        max-width: 100%;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos {
+        display: block;
+        width: 100%;
+        height: auto;
+        -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+                transform: rotate(0);
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos img {
+        width: 35px;
+        max-width: 35px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .info-pasos {
+        font-family: bombardier;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        height: 100px;
+      }
+      #fullpage .zonas {
+        background-image: url(../img/fondo-zonas.png);
+        background-size: cover;
+        background-position: 0px 0px;
+        height: auto !important;
+        padding-bottom: 30px;
+      }
+      #fullpage .zonas .wrapper {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1100px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-image: url(../img/lazo-amarillo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 {
+        position: relative;
+        display: inline-block;
+        font-weight: normal;
+        color: #c32821;
+        font-family: bombardier;
+        font-size: 30px;
+        width: 230px;
+        margin: 0;
+        padding: 0;
+        margin-top: 16px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub {
+        position: absolute;
+        left: -60px;
+        top: 0;
+        width: 22px;
+        height: 32px;
+        background-image: url(../img/iso-ubicacion.png);
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub2 {
+        position: absolute;
+        right: -60px;
+        top: 0;
+        width: 22px;
+        height: 32px;
+        background-image: url(../img/iso-ubicacion.png);
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-amarillo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos p {
+        color: #fff;
+        font-family: helvetica;
+        font-size: 17px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos ul {
+        margin: 0;
+        padding: 0;
+        width: 31%;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos ul li {
+        font-family: bombardier;
+        font-size: 26px;
+        color: #efa01a;
+        position: relative;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding-left: 35px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos ul li span {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding-top: 4px;
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url(../img/distritos-icon.png);
+        font-size: 18px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .lista-uno .pueblo,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-uno .miraflores {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .lista-dos .miraflores,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-dos .pueblo {
+        display: block;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .lista-dos .miguel,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-dos .surco,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-dos .surquillo {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres {
+        display: block;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .barranco,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .miraflores,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .pueblo,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .borja,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .isidro,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .luis,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .jesus,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .molina,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .lince,
+      #fullpage .zonas .wrapper .sub-wrapper .lista-tres .magdalena {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa {
+        position: relative;
+        width: 490px;
+        height: auto;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa span {
+        width: 22px;
+        position: absolute;
+        left: 195px;
+        top: 345px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa span img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .dos {
+        width: 26px;
+        left: 165px;
+        top: 270px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .tres {
+        width: 38px;
+        left: 300px;
+        top: 280px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .cuatro {
+        width: 28px;
+        left: 184px;
+        top: 280px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .cinco {
+        width: 20px;
+        left: 145px;
+        top: 300px;
+        z-index: 10;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .seis {
+        width: 22px;
+        left: 178px;
+        top: 325px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .siete {
+        width: 25px;
+        left: 142px;
+        top: 268px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .ocho {
+        width: 22px;
+        left: 225px;
+        top: 305px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .nueve {
+        width: 22px;
+        left: 165px;
+        top: 302px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .diez {
+        width: 26px;
+        left: 220px;
+        top: 270px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .once {
+        width: 32px;
+        left: 110px;
+        top: 270px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .doce {
+        width: 32px;
+        left: 220px;
+        top: 340px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .trece {
+        width: 24px;
+        left: 199px;
+        top: 310px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa .numeros-anim {
+        -webkit-animation: salto 0.5s infinite alternate;
+                animation: salto 0.5s infinite alternate;
+      }
+      #fullpage .contactos {
+        background-color: white;
+        background-image: url(../img/fondo-contactos.png);
+        background-size: cover;
+        background-position: top right;
+        padding: 0;
+        height: auto !important;
+      }
+      #fullpage .contactos .wrapp {
+        width: 90%;
+        height: auto;
+        max-width: 1200px;
+        margin: auto;
+        padding-top: 70px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+      }
+      #fullpage .contactos .wrapp .formulario {
+        width: 100%;
+        height: auto;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .contactos .wrapp .formulario .lazo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        width: 100%;
+        position: relative;
+        height: 50px;
+        text-align: center;
+        background-image: url(../img/lazo-contact.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: bombardier;
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+        padding-top: 10px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        color: #efa01a;
+      }
+      #fullpage .contactos .wrapp .formulario .lazo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-rojo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .contactos .wrapp .formulario form {
+        width: 100%;
+        height: auto;
+        margin-top: 42px;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .contactos .wrapp .formulario form input {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-color: transparent;
+      }
+      #fullpage .contactos .wrapp .formulario form textarea {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background-color: transparent;
+        height: 10px;
+      }
+      #fullpage .contactos .wrapp .formulario form #enviar {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        display: inline-block;
+        width: 100px;
+        padding: 10px 0;
+        background-color: #c32821;
+        color: #fff;
+        font-size: 16px;
+        font-family: helve;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      #fullpage .contactos .wrapp .contact {
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      #fullpage .contactos .wrapp .contact h2 {
+        font-family: bombardier;
+        font-weight: normal;
+        font-size: 30px;
+        color: #fff;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      #fullpage .contactos .wrapp .contact h2 span {
+        color: #c32821;
+      }
+      #fullpage .contactos .wrapp .contact .like-box {
+        margin: 0;
+        width: 100%;
+        height: 210px;
+        display: none;
+      }
+      #fullpage .contactos footer {
+        position: relative;
+        bottom: none;
+        left: none;
+        width: 100%;
+      }
+      #fullpage .contactos footer .legal {
+        font-size: 18px;
+      }
+      #fullpage .contactos footer .derechos {
+        padding-left: 0;
+        text-align: center;
+      }
+      #fullpage .contactos footer .medstudio {
+        display: none;
+      }
+
+      /*------------------header-------------------------------*/
+    }
+    @media (max-width: 550px) {
+      #fullpage {
+        /*------------------header-------------------------------*/
+        /*------------------header-------------------------------*/
+      }
+      #fullpage header {
+        height: 60px;
+      }
+      #fullpage header .logo3 {
+        width: 150px;
+        display: block;
+        height: 100%;
+        left: -20px;
+        -webkit-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+                transform: skew(-30deg);
+        background-color: #fff;
+        padding-top: 7px;
+      }
+      #fullpage header .logo3 img {
+        width: 100%;
+        max-width: 100%;
+        -webkit-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+                transform: skew(30deg);
+      }
+      #fullpage .telf {
+        font-size: 20px;
+      }
+      #fullpage .home {
+        background-image: url(../img/fondo-750.jpg);
+        height: 100vh;
+      }
+      #fullpage .home .content {
+        height: auto;
+      }
+      #fullpage .home .content .frase {
+        width: 100%;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-top: 220px;
+      }
+      #fullpage .home .content .frase img {
+        width: 75%;
+        max-width: 75%;
+        opacity: 0;
+      }
+      #fullpage .home .content .frase .haz-tu-pedido {
+        top: -100px;
+      }
+      #fullpage .home .content .nav-dos {
+        width: 100%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .home .content .nav-dos .me-baronline {
+        width: 23%;
+      }
+      #fullpage .home .content .nav-dos a {
+        cursor: pointer;
+        text-align: center;
+        width: 23%;
+      }
+      #fullpage .home .content .nav-dos a img {
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        margin-bottom: -5px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      #fullpage .home .content .nav-dos a .sombrita {
+        display: inline-block;
+        width: 73px;
+        height: 12px;
+        background-image: url(../img/sombra-icon.png);
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        opacity: 0.7;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      #fullpage .home .content .nav-dos a .sombrita.icon-animate {
+        -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+      }
+      #fullpage .home .content .nav-dos a h2 {
+        font-family: bombardier;
+        color: #efa01a;
+        font-size: 18px;
+        margin: 0;
+        font-weight: normal;
+        -webkit-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+      #fullpage .como-pedir {
+        background-color: #efa01a;
+        position: relative;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        height: auto;
+        padding-bottom: 40px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1200px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #efa01a;
+        font-family: bombardier;
+        font-size: 24px;
+        background-image: url(../img/lazo-rojo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 70px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .interro {
+        font-size: 50px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-rojo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos {
+        width: 100%;
+        height: auto;
+        text-align: center;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .icon-pasos img {
+        width: 70%;
+        max-width: 100%;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos {
+        display: block;
+        width: 100%;
+        height: auto;
+        -webkit-transform: rotate(0);
+            -ms-transform: rotate(0);
+                transform: rotate(0);
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .triangulo-pasos img {
+        width: 35px;
+        max-width: 35px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .pasos .info-pasos {
+        font-family: bombardier;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        margin-bottom: 30px;
+      }
+      #fullpage .zonas {
+        background-image: url(../img/fondo-zonas.png);
+        background-size: cover;
+        background-position: 0px 0px;
+        height: auto !important;
+        padding-bottom: 30px;
+      }
+      #fullpage .zonas .wrapper {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1100px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-image: url(../img/lazo-amarillo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 {
+        position: relative;
+        display: inline-block;
+        font-weight: normal;
+        color: #c32821;
+        font-family: bombardier;
+        font-size: 30px;
+        width: 230px;
+        margin: 0;
+        padding: 0;
+        margin-top: 16px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub {
+        position: absolute;
+        left: -60px;
+        top: 0;
+        width: 22px;
+        height: 32px;
+        background-image: url(../img/iso-ubicacion.png);
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub2 {
+        position: absolute;
+        right: -60px;
+        top: 0;
+        width: 22px;
+        height: 32px;
+        background-image: url(../img/iso-ubicacion.png);
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-amarillo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos p {
+        color: #fff;
+        font-family: helvetica;
+        font-size: 17px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos ul {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis {
+        width: 23%;
+        height: auto;
+        background-color: #efa01a;
+        margin-bottom: 10px;
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis p {
+        margin: 0;
+        padding: 0;
+        font-family: bombardier;
+        color: #c32821;
+        text-align: center;
+        font-size: 20px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa {
+        display: none;
+      }
+      #fullpage .contactos {
+        background-color: white;
+        background-image: url(../img/fondo-contactos.png);
+        background-size: cover;
+        background-position: top right;
+        padding: 0;
+        height: auto !important;
+      }
+      #fullpage .contactos .wrapp .formulario {
+        width: 100%;
+        height: auto;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .contactos .wrapp .contact h2 {
+        font-size: 28px;
+      }
+      #fullpage .contactos footer {
+        position: relative;
+        bottom: none;
+        left: none;
+        width: 100%;
+      }
+      #fullpage .contactos footer .legal {
+        font-size: 18px;
+      }
+
+      /*------------------header-------------------------------*/
+    }
+    @media (max-width: 460px) {
+      .modal-menu .nav-dos {
+        width: 90%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-justify-content: space-around;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      .modal-menu .nav-dos a {
+        cursor: pointer;
+        text-align: center;
+        width: 35%;
+        margin-top: 20px;
+      }
+      .modal-menu .nav-dos a img {
+        width: 60%;
+        max-width: 60%;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        margin-bottom: -5px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      .modal-menu .nav-dos a .sombra {
+        display: inline-block;
+        width: 73px;
+        height: 12px;
+        background-image: url(../img/sombra-icon.png);
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        opacity: 0.7;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      .modal-menu .nav-dos a h2 {
+        font-family: bombardier;
+        color: #efa01a;
+        font-size: 18px;
+        margin: 0;
+        font-weight: normal;
+        -webkit-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+
+      #fullpage {
+        /*------------------header-------------------------------*/
+        /*------------------header-------------------------------*/
+      }
+      #fullpage header {
+        height: 60px;
+      }
+      #fullpage header .logo3 {
+        width: 150px;
+        display: block;
+        height: 100%;
+        left: -20px;
+        -webkit-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+                transform: skew(-30deg);
+        background-color: #fff;
+        padding-top: 7px;
+      }
+      #fullpage header .logo3 img {
+        width: 100%;
+        max-width: 100%;
+        -webkit-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+                transform: skew(30deg);
+      }
+      #fullpage header nav.nav {
+        margin-right: 15px;
+      }
+      #fullpage header nav.nav .ul-scroll {
+        width: 150px;
+      }
+      #fullpage header nav.nav ul {
+        margin: 0;
+        padding: 0;
+        width: 130px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        list-style: none;
+      }
+      #fullpage header nav.nav ul li {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+      }
+      #fullpage header nav.nav ul li img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage header nav.nav ul .redes4 {
+        height: 25px;
+        width: 32px;
+      }
+      #fullpage header nav.nav ul .redes4 img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage header nav.nav ul .redes4 .pro-numero {
+        display: none;
+      }
+      #fullpage header nav.nav ul .menu-bar {
+        margin-left: 0;
+      }
+      #fullpage .telf {
+        font-size: 16px;
+        top: 60px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+      #fullpage .home {
+        background-image: url(../img/fondo-750.jpg);
+        height: 100vh;
+      }
+      #fullpage .home .content {
+        height: auto;
+      }
+      #fullpage .home .content .frase {
+        width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        margin-top: 150px;
+      }
+      #fullpage .home .content .frase img {
+        width: 75%;
+        max-width: 75%;
+        opacity: 0;
+      }
+      #fullpage .home .content .frase .haz-tu-pedido {
+        top: -50px;
+      }
+      #fullpage .home .content .frase .haz-tu-pedido .triangulo {
+        display: none;
+      }
+      #fullpage .home .content .nav-dos {
+        width: 100%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .home .content .nav-dos .me-baronline {
+        width: 23%;
+      }
+      #fullpage .home .content .nav-dos a {
+        cursor: pointer;
+        text-align: center;
+        width: 23%;
+        text-align: center;
+      }
+      #fullpage .home .content .nav-dos a img {
+        width: 90%;
+        max-width: 100%;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        margin-bottom: -5px;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      #fullpage .home .content .nav-dos a .sombrita {
+        display: inline-block;
+        width: 60%;
+        height: 8px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(../img/sombra-icon.png);
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        opacity: 0.7;
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+      }
+      #fullpage .home .content .nav-dos a h2 {
+        font-family: bombardier;
+        color: #efa01a;
+        font-size: 14px;
+        margin: 0;
+        font-weight: normal;
+        -webkit-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+                transform: translateY(30px);
+        opacity: 0;
+      }
+      #fullpage .como-pedir {
+        padding-top: 30px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1200px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        padding-top: 20px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        text-align: center;
+        color: #efa01a;
+        font-family: bombardier;
+        font-size: 24px;
+        background-image: url(../img/lazo-rojo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 70px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .interro {
+        font-size: 24px;
+      }
+      #fullpage .como-pedir .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-rojo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .zonas {
+        background-image: url(../img/fondo-zonas.png);
+        background-size: cover;
+        background-position: 0px 0px;
+        height: auto !important;
+        padding-bottom: 30px;
+        padding-top: 30px;
+      }
+      #fullpage .zonas .wrapper {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper {
+        padding-top: 75px;
+        width: 90%;
+        height: auto;
+        max-width: 1100px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo {
+        -webkit-transform: rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+                transform: rotate(-2deg);
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        background-image: url(../img/lazo-amarillo.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        height: 59px;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 {
+        position: relative;
+        display: inline-block;
+        font-weight: normal;
+        color: #c32821;
+        font-family: bombardier;
+        font-size: 30px;
+        width: 230px;
+        margin: 0;
+        padding: 0;
+        margin-top: 16px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo h2 .icon-ub2 {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .titulo .tri-rojo {
+        width: 35px;
+        height: 30px;
+        position: absolute;
+        background-image: url(../img/triangulo-amarillo.png);
+        bottom: -33px;
+        left: 50%;
+        margin-left: -17.5px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos p {
+        color: #fff;
+        font-family: helvetica;
+        font-size: 17px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos ul {
+        display: none;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov {
+        width: 100%;
+        height: auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis {
+        width: 32%;
+        height: auto;
+        background-color: #efa01a;
+        margin-bottom: 10px;
+        padding: 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis img {
+        width: 100%;
+        max-width: 100%;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis p {
+        margin: 0;
+        padding: 0;
+        font-family: bombardier;
+        color: #c32821;
+        text-align: center;
+        font-size: 20px;
+      }
+      #fullpage .zonas .wrapper .sub-wrapper .mapa {
+        display: none;
+      }
+      #fullpage .contactos {
+        padding-top: 30px;
+      }
+      #fullpage .contactos .wrapp .formulario p {
+        background-size: 100%;
+      }
+      #fullpage .contactos .wrapp .contact h2 {
+        font-size: 22px;
+      }
+      #fullpage .contactos footer .legal {
+        font-size: 14px;
+        letter-spacing: 0px;
+      }
+    }
+    @media (max-width: 370px) {
+      .contactos .wrapp .formulario p {
+        background-size: 100%;
+      }
+    }
+
+    /* ============================================================
+       ESTACIÃ“N 180 â€” TEMA OSCURO / LIMA / AZUL
+       Capa visual aÃ±adida sobre el CSS original.
+       Mantiene la estructura, responsive y animaciones existentes.
+       ============================================================ */
+
+    :root {
+      --e180-bg: #050505;
+      --e180-bg-soft: #090b0f;
+      --e180-surface: #0d1015;
+      --e180-surface-2: #12151b;
+      --e180-lime: #d7ff00;
+      --e180-lime-bright: #cfff00;
+      --e180-blue: #1769ff;
+      --e180-white: #f5f5f5;
+      --e180-text: #c5c7cc;
+      --e180-muted: #8d929c;
+      --e180-border: #252a20;
+      --e180-whatsapp: #25d366;
+    }
+
+    html,
+    body {
+      background: var(--e180-bg);
+      color: var(--e180-white);
+    }
+
+    /* PRELOADER */
+    .modal .preloader {
+      background: var(--e180-bg) !important;
+    }
+    .modal .preloader .carga {
+      background-color: var(--e180-lime) !important;
+      box-shadow: 0 0 28px rgba(215,255,0,.22);
+    }
+    .modal .preloader .carga .corte,
+    .modal .preloader .amarillo {
+      background-color: var(--e180-bg) !important;
+    }
+    .modal .preloader .amarillo .circle {
+      background-color: var(--e180-lime) !important;
+    }
+
+    /* MENÃš MODAL */
+    .modal-menu {
+      background-image: none !important;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(215,255,0,.10), transparent 28%),
+        radial-gradient(circle at 15% 75%, rgba(23,105,255,.12), transparent 30%),
+        var(--e180-bg) !important;
+    }
+    .modal-menu .nav-dos a h2 {
+      color: var(--e180-lime) !important;
+    }
+    .modal-menu .nav-dos a:hover h2 {
+      color: var(--e180-white) !important;
+    }
+
+    /* CARRITO */
+    #fullpage .box-carro {
+      background: var(--e180-surface) !important;
+      color: var(--e180-white);
+      border-left: 1px solid var(--e180-border);
+      box-shadow: -18px 0 45px rgba(0,0,0,.45);
+    }
+    #fullpage .box-carro .lista li {
+      background: var(--e180-surface-2) !important;
+      border: 1px solid var(--e180-border);
+    }
+    #fullpage .box-carro .lista li span {
+      color: var(--e180-white) !important;
+    }
+    #fullpage .box-carro .comprar {
+      border-top-color: var(--e180-lime) !important;
+    }
+    #fullpage .box-carro .comprar ul li {
+      color: var(--e180-text) !important;
+    }
+    #fullpage .box-carro .comprar .boton-comprar {
+      background: var(--e180-lime) !important;
+      color: #050505 !important;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+    #fullpage .box-carro .comprar .boton-comprar .tri-comprar {
+      border-left-color: rgba(5,5,5,.25) !important;
+    }
+
+    /* HEADER */
+    #fullpage header {
+      background: rgba(5,5,5,.96) !important;
+      border-bottom: 1px solid rgba(215,255,0,.12);
+      box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    }
+    #fullpage header .logo,
+    #fullpage header .logo3 {
+      background: var(--e180-bg) !important;
+    }
+    #fullpage .header2 {
+      background: rgba(5,5,5,.97) !important;
+      border-bottom: 1px solid var(--e180-border);
+    }
+    #fullpage header nav.nav ul .menu-bar .lin-bar {
+      background-color: var(--e180-lime) !important;
+    }
+    #fullpage header nav.nav ul .redes4 .pro-numero {
+      border-top-color: var(--e180-lime) !important;
+    }
+
+    /* TELÃ‰FONO */
+    #fullpage .telf {
+      color: var(--e180-white) !important;
+    }
+    #fullpage .telf span {
+      color: var(--e180-lime) !important;
+    }
+
+    /* HOME */
+    #fullpage .home {
+      background-image:
+        radial-gradient(circle at 12% 45%, rgba(23,105,255,.16), transparent 34%),
+        radial-gradient(circle at 90% 35%, rgba(215,255,0,.10), transparent 28%),
+        linear-gradient(115deg, #070a10 0%, #050505 48%, #070905 100%) !important;
+      background-color: var(--e180-bg) !important;
+    }
+    #fullpage .home .content .frase .haz-tu-pedido {
+      color: var(--e180-lime) !important;
+      text-shadow: 0 0 22px rgba(215,255,0,.12) !important;
+    }
+    #fullpage .home .content .frase .haz-tu-pedido span {
+      color: var(--e180-white) !important;
+    }
+    #fullpage .home .content .nav-dos a h2 {
+      color: var(--e180-lime) !important;
+    }
+    #fullpage .home .content .nav-dos a:hover h2 {
+      color: var(--e180-white) !important;
+    }
+
+    /* CÃ“MO PEDIR */
+    #fullpage .como-pedir {
+      background:
+        radial-gradient(circle at 85% 10%, rgba(215,255,0,.08), transparent 26%),
+        linear-gradient(180deg, #090b0f 0%, #050505 100%) !important;
+      color: var(--e180-white);
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .titulo {
+      background-image: none !important;
+      color: var(--e180-lime) !important;
+      border: 1px solid rgba(215,255,0,.28);
+      background-color: rgba(215,255,0,.06);
+      border-radius: 14px;
+      height: auto !important;
+      padding: 12px 20px !important;
+      box-sizing: border-box;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .titulo .tri-rojo {
+      display: none !important;
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos {
+      color: var(--e180-white);
+    }
+    #fullpage .como-pedir .wrapper .sub-wrapper .pasos .info-pasos {
+      color: var(--e180-text) !important;
+    }
+
+    /* ZONAS */
+    #fullpage .zonas {
+      background-image:
+        radial-gradient(circle at 15% 30%, rgba(23,105,255,.14), transparent 30%),
+        radial-gradient(circle at 88% 70%, rgba(215,255,0,.08), transparent 28%),
+        linear-gradient(145deg, #070a10, #050505 55%, #080a05) !important;
+      background-color: var(--e180-bg) !important;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo {
+      background-image: none !important;
+      background-color: var(--e180-lime) !important;
+      border-radius: 14px;
+      height: auto !important;
+      padding: 10px 16px !important;
+      box-sizing: border-box;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo h2 {
+      color: #050505 !important;
+      margin-top: 0 !important;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .titulo .tri-rojo {
+      display: none !important;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos p {
+      color: var(--e180-text) !important;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos ul li {
+      color: var(--e180-lime) !important;
+      transition: color .2s ease, transform .2s ease;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos ul li:hover {
+      color: var(--e180-white) !important;
+      transform: translateX(4px);
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis {
+      background: var(--e180-surface) !important;
+      border: 1px solid var(--e180-border);
+      border-radius: 12px;
+    }
+    #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis p {
+      color: var(--e180-lime) !important;
+    }
+
+    /* CONTACTO */
+    #fullpage .contactos {
+      background-image:
+        radial-gradient(circle at 85% 20%, rgba(215,255,0,.08), transparent 28%),
+        radial-gradient(circle at 10% 70%, rgba(23,105,255,.10), transparent 28%),
+        linear-gradient(180deg, #080a0e, #050505) !important;
+      background-color: var(--e180-bg) !important;
+    }
+    #fullpage .contactos .wrapp .formulario .lazo {
+      background-image: none !important;
+      background-color: var(--e180-lime) !important;
+      color: #050505 !important;
+      border-radius: 12px;
+    }
+    #fullpage .contactos .wrapp .formulario .lazo .tri-rojo {
+      display: none !important;
+    }
+    #fullpage .contactos .wrapp .formulario form input,
+    #fullpage .contactos .wrapp .formulario form textarea {
+      background: var(--e180-surface) !important;
+      color: var(--e180-white) !important;
+      border: 1px solid var(--e180-border) !important;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    #fullpage .contactos .wrapp .formulario form input:focus,
+    #fullpage .contactos .wrapp .formulario form textarea:focus {
+      border-color: var(--e180-lime) !important;
+      box-shadow: 0 0 0 3px rgba(215,255,0,.08);
+    }
+    #fullpage .contactos .wrapp .formulario form input::placeholder,
+    #fullpage .contactos .wrapp .formulario form textarea::placeholder {
+      color: var(--e180-muted) !important;
+    }
+    #fullpage .contactos .wrapp .formulario form #enviar {
+      background: var(--e180-lime) !important;
+      color: #050505 !important;
+      border: 0 !important;
+      border-radius: 9px;
+      font-weight: 700;
+    }
+    #fullpage .contactos .wrapp .contact h2 {
+      color: var(--e180-white) !important;
+    }
+    #fullpage .contactos .wrapp .contact h2 span {
+      color: var(--e180-lime) !important;
+    }
+    #fullpage .contactos .wrapp .contact .like-box .fb-page {
+      border-color: var(--e180-lime) !important;
+    }
+
+    /* FOOTER */
+    #fullpage .contactos footer .legal {
+      background: #080a0e !important;
+      color: var(--e180-white) !important;
+      border-top: 1px solid var(--e180-border);
+    }
+    #fullpage .contactos footer .derechos {
+      background: var(--e180-lime) !important;
+      color: #050505 !important;
+    }
+    #fullpage .contactos footer .medstudio {
+      color: #050505 !important;
+    }
+
+    /* SELECCIÃ“N */
+    ::selection {
+      background: var(--e180-lime);
+      color: #050505;
+    }
+
+    /* AJUSTES RESPONSIVE DEL TEMA */
+    @media (max-width: 750px) {
+      #fullpage header,
+      #fullpage .header2 {
+        background: rgba(5,5,5,.98) !important;
+      }
+
+      #fullpage header .logo3 {
+        background: var(--e180-bg) !important;
+      }
+
+      #fullpage .home {
+        background-image:
+          radial-gradient(circle at 50% 20%, rgba(23,105,255,.16), transparent 32%),
+          linear-gradient(180deg, #070a10 0%, #050505 65%) !important;
+      }
+
+      #fullpage .como-pedir {
+        background: var(--e180-bg) !important;
+      }
+
+      #fullpage .zonas {
+        background:
+          radial-gradient(circle at 50% 15%, rgba(215,255,0,.07), transparent 30%),
+          var(--e180-bg) !important;
+      }
+
+      #fullpage .contactos {
+        background: var(--e180-bg) !important;
+      }
+    }
+
+    @media (max-width: 460px) {
+      #fullpage .telf {
+        background: var(--e180-bg) !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2,
+      .modal-menu .nav-dos a h2 {
+        color: var(--e180-lime) !important;
+      }
+
+      #fullpage .zonas .wrapper .sub-wrapper .distritos .dis-mov .dis {
+        background: var(--e180-surface) !important;
+      }
+    }
+
+
+
+    /* ============================================================
+       ESTACIÓN 180 — AJUSTE FINAL HOME
+       Mantiene la estructura y animaciones originales.
+       ============================================================ */
+
+    /* PALETA */
+    :root {
+      --e180-bg: #050505;
+      --e180-bg-soft: #090b0f;
+      --e180-surface: #0d1015;
+      --e180-lime: #d7ff00;
+      --e180-blue: #1769ff;
+      --e180-white: #f5f5f5;
+      --e180-text: #c5c7cc;
+      --e180-border: #252a20;
+    }
+
+    /* HEADER Y LOGO */
+    #fullpage header {
+      background: rgba(5,5,5,.97) !important;
+      border-bottom: 1px solid rgba(215,255,0,.14);
+    }
+
+    #fullpage header .logo {
+      width: 180px !important;
+      height: 100px !important;
+      margin-left: 0 !important;
+      padding: 7px 15px !important;
+      background: #050505 !important;
+      transform: none !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #fullpage header .logo img {
+      width: auto !important;
+      max-width: 150px !important;
+      max-height: 84px !important;
+      height: auto !important;
+      object-fit: contain;
+      transform: none !important;
+    }
+
+    #fullpage header .logo2 img,
+    #fullpage header .logo3 img {
+      width: auto !important;
+      max-width: 135px !important;
+      max-height: 58px !important;
+      object-fit: contain;
+    }
+
+    /* TELÉFONO */
+    #fullpage .telf {
+      color: var(--e180-white) !important;
+    }
+
+    #fullpage .telf span {
+      color: var(--e180-lime) !important;
+    }
+
+    /* HOME */
+    #fullpage .home {
+      background:
+        radial-gradient(circle at 12% 45%, rgba(23,105,255,.17), transparent 34%),
+        radial-gradient(circle at 90% 35%, rgba(215,255,0,.11), transparent 29%),
+        linear-gradient(115deg, #070a10 0%, #050505 50%, #070905 100%) !important;
+    }
+
+    /* PERSONAJES: el HTML usa section.pareja */
+    #fullpage .home .pareja {
+      width: 28% !important;
+      max-width: 420px !important;
+      left: 4.5% !important;
+      bottom: -4px !important;
+    }
+
+    #fullpage .home .pareja img {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain;
+    }
+
+    /* CONTENIDO DERECHO */
+    #fullpage .home .content {
+      right: 2.5% !important;
+      width: 57% !important;
+      padding-bottom: 42px !important;
+    }
+
+    /* NUEVA FRASE */
+    #fullpage .home .content .frase {
+      width: 56% !important;
+      max-width: 560px;
+      margin-bottom: 28px !important;
+    }
+
+    #fullpage .home .content .frase img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* HAZ TU PEDIDO ONLINE */
+    #fullpage .home .content .frase .haz-tu-pedido {
+      color: var(--e180-lime) !important;
+      text-shadow: 0 0 18px rgba(215,255,0,.13) !important;
+    }
+
+    #fullpage .home .content .frase .haz-tu-pedido span {
+      color: var(--e180-white) !important;
+    }
+
+    /* ICONOS INFERIORES */
+    #fullpage .home .content .nav-dos {
+      width: min(500px, 95%) !important;
+    }
+
+    #fullpage .home .content .nav-dos a h2 {
+      color: var(--e180-lime) !important;
+    }
+
+    #fullpage .home .content .nav-dos a:hover h2 {
+      color: var(--e180-white) !important;
+    }
+
+    /* MENÚ MODAL */
+    .modal-menu {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(215,255,0,.10), transparent 28%),
+        radial-gradient(circle at 15% 75%, rgba(23,105,255,.12), transparent 30%),
+        #050505 !important;
+    }
+
+    .modal-menu .nav-dos a h2 {
+      color: var(--e180-lime) !important;
+    }
+
+    /* PRELOADER */
+    .modal .preloader {
+      background: #050505 !important;
+    }
+
+    .modal .preloader .carga {
+      background-color: var(--e180-lime) !important;
+    }
+
+    .modal .preloader .carga .corte,
+    .modal .preloader .amarillo {
+      background-color: #050505 !important;
+    }
+
+    .modal .preloader .amarillo .circle {
+      background-color: var(--e180-lime) !important;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      #fullpage .home .pareja {
+        width: 30% !important;
+        left: 2.5% !important;
+      }
+
+      #fullpage .home .content {
+        width: 61% !important;
+        right: 1% !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 52% !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      #fullpage .home .pareja {
+        width: 32% !important;
+        max-width: 330px !important;
+        left: 1.5% !important;
+      }
+
+      #fullpage .home .content {
+        width: 64% !important;
+        right: 0 !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 50% !important;
+      }
+    }
+
+    @media (max-width: 750px) {
+      #fullpage header,
+      #fullpage .header2 {
+        background: rgba(5,5,5,.98) !important;
+      }
+
+      #fullpage header .logo3 {
+        background: #050505 !important;
+      }
+
+      #fullpage .home {
+        background:
+          radial-gradient(circle at 50% 20%, rgba(23,105,255,.15), transparent 32%),
+          linear-gradient(180deg, #070a10, #050505 70%) !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 46% !important;
+        max-width: 310px !important;
+        left: 2% !important;
+      }
+
+      #fullpage .home .content {
+        width: 56% !important;
+        right: 0 !important;
+        padding-bottom: 25px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 72% !important;
+        margin-bottom: 18px !important;
+      }
+    }
+
+    @media (max-width: 550px) {
+      #fullpage .home .pareja {
+        width: 54% !important;
+        max-width: 260px !important;
+        left: -5% !important;
+      }
+
+      #fullpage .home .content {
+        width: 64% !important;
+        right: 0 !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 76% !important;
+      }
+    }
+
+    @media (max-width: 460px) {
+      #fullpage .telf {
+        background: #050505 !important;
+      }
+
+      #fullpage header .logo3 img {
+        max-width: 105px !important;
+        max-height: 48px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 58% !important;
+        max-width: 235px !important;
+        left: -8% !important;
+      }
+
+      #fullpage .home .content {
+        width: 66% !important;
+      }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — RESPONSIVE DEFINITIVO
+       Teléfonos pequeños 320px–430px
+       ============================================================ */
+
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* MÓVILES */
+    @media screen and (max-width: 750px) {
+
+      #fullpage .home {
+        min-height: 100svh;
+        overflow: hidden;
+      }
+
+      #fullpage header {
+        width: 100%;
+        height: 64px !important;
+      }
+
+      #fullpage header .logo,
+      #fullpage header .logo2,
+      #fullpage header .logo3 {
+        width: 125px !important;
+        height: 64px !important;
+        padding: 5px 8px !important;
+        margin: 0 !important;
+        transform: none !important;
+        background: #050505 !important;
+      }
+
+      #fullpage header .logo img,
+      #fullpage header .logo2 img,
+      #fullpage header .logo3 img {
+        width: auto !important;
+        max-width: 108px !important;
+        max-height: 52px !important;
+        height: auto !important;
+        transform: none !important;
+        object-fit: contain;
+      }
+
+      #fullpage header nav.nav {
+        margin-right: 12px !important;
+      }
+
+      #fullpage header nav.nav ul {
+        width: auto !important;
+        gap: 7px;
+      }
+
+      #fullpage header nav.nav ul li {
+        width: 25px !important;
+        height: 25px !important;
+      }
+
+      #fullpage header nav.nav ul li img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #fullpage header nav.nav ul .redes4 {
+        width: 34px !important;
+        height: 30px !important;
+        padding: 4px !important;
+      }
+
+      #fullpage header nav.nav ul .menu-bar {
+        margin-left: 8px !important;
+        width: 30px !important;
+      }
+
+      #fullpage header nav.nav ul .menu-bar .lin-bar {
+        width: 30px !important;
+        background: #d7ff00 !important;
+      }
+
+      #fullpage .telf {
+        top: 66px !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 5px 8px;
+        box-sizing: border-box;
+        font-size: 15px !important;
+        line-height: 18px !important;
+        background: rgba(5,5,5,.92) !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 47% !important;
+        max-width: 285px !important;
+        left: -2% !important;
+        bottom: 0 !important;
+      }
+
+      #fullpage .home .content {
+        width: 61% !important;
+        right: -1% !important;
+        bottom: 0 !important;
+        padding-bottom: 18px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 78% !important;
+        max-width: 330px !important;
+        margin-bottom: 14px !important;
+      }
+
+      #fullpage .home .content .frase .haz-tu-pedido {
+        display: none !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: 96% !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 4px;
+        justify-items: center;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 90px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img {
+        max-width: 52px !important;
+        max-height: 52px !important;
+      }
+
+      #fullpage .home .content .nav-dos a .sombrita {
+        width: 50px !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 14px !important;
+        line-height: 15px !important;
+      }
+    }
+
+    /* iPHONE / ANDROID COMPACTOS */
+    @media screen and (max-width: 430px) {
+
+      #fullpage header {
+        height: 58px !important;
+      }
+
+      #fullpage header .logo,
+      #fullpage header .logo2,
+      #fullpage header .logo3 {
+        width: 108px !important;
+        height: 58px !important;
+      }
+
+      #fullpage header .logo img,
+      #fullpage header .logo2 img,
+      #fullpage header .logo3 img {
+        max-width: 94px !important;
+        max-height: 47px !important;
+      }
+
+      #fullpage header nav.nav {
+        margin-right: 7px !important;
+      }
+
+      #fullpage header nav.nav ul {
+        gap: 4px !important;
+      }
+
+      #fullpage header nav.nav ul li {
+        width: 22px !important;
+        height: 22px !important;
+      }
+
+      #fullpage .telf {
+        top: 59px !important;
+        font-size: 13px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 52% !important;
+        max-width: 235px !important;
+        left: -8% !important;
+      }
+
+      #fullpage .home .content {
+        width: 65% !important;
+        right: -2% !important;
+        padding-bottom: 12px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 80% !important;
+        margin-bottom: 9px !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        gap: 5px 0 !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 78px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img {
+        max-width: 44px !important;
+        max-height: 44px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 12px !important;
+        line-height: 13px !important;
+      }
+    }
+
+    /* TELÉFONOS MUY PEQUEÑOS: 320–374px */
+    @media screen and (max-width: 374px) {
+
+      #fullpage header .logo,
+      #fullpage header .logo2,
+      #fullpage header .logo3 {
+        width: 92px !important;
+      }
+
+      #fullpage header .logo img,
+      #fullpage header .logo2 img,
+      #fullpage header .logo3 img {
+        max-width: 80px !important;
+      }
+
+      #fullpage header nav.nav ul .redes1,
+      #fullpage header nav.nav ul .redes3 {
+        display: none !important;
+      }
+
+      #fullpage .telf {
+        font-size: 11px !important;
+        line-height: 15px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 55% !important;
+        max-width: 205px !important;
+        left: -10% !important;
+      }
+
+      #fullpage .home .content {
+        width: 67% !important;
+        right: -3% !important;
+        padding-bottom: 8px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 77% !important;
+        margin-bottom: 5px !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 68px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img {
+        max-width: 38px !important;
+        max-height: 38px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 10px !important;
+        line-height: 11px !important;
+      }
+    }
+
+    /* PANTALLAS BAJAS: evita superposición en móviles */
+    @media screen and (max-width: 750px) and (max-height: 680px) {
+
+      #fullpage .home .pareja {
+        max-height: 70vh !important;
+      }
+
+      #fullpage .home .pareja img {
+        max-height: 70vh !important;
+        object-fit: contain;
+        object-position: bottom;
+      }
+
+      #fullpage .home .content .frase {
+        width: 67% !important;
+      }
+
+      #fullpage .home .content .nav-dos a img {
+        max-width: 38px !important;
+        max-height: 38px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 10px !important;
+      }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — MOBILE FIX FINAL
+       Corrige HOME en teléfonos: personajes visibles, menos vacío,
+       frase e iconos más grandes y mejor distribución.
+       ============================================================ */
+
+    @media screen and (max-width: 750px) {
+
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+      #fullpage .home {
+        position: relative !important;
+        min-height: 100svh !important;
+        overflow: hidden !important;
+        background:
+          radial-gradient(circle at 20% 55%, rgba(23,105,255,.16), transparent 35%),
+          radial-gradient(circle at 78% 38%, rgba(215,255,0,.08), transparent 28%),
+          linear-gradient(145deg, #07101f 0%, #05070b 48%, #050505 100%) !important;
+      }
+
+      /* El CSS antiguo ocultaba a la pareja en móvil. La forzamos visible. */
+      #fullpage .home .pareja {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        width: 46% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        left: -3% !important;
+        bottom: 0 !important;
+        z-index: 2 !important;
+      }
+
+      #fullpage .home .pareja img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: bottom left !important;
+      }
+
+      #fullpage .home .content {
+        position: absolute !important;
+        width: 66% !important;
+        height: auto !important;
+        right: 0 !important;
+        left: auto !important;
+        top: 24% !important;
+        bottom: auto !important;
+        padding: 0 3% 0 0 !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        z-index: 3 !important;
+      }
+
+      #fullpage .home .content .frase {
+        display: block !important;
+        width: 88% !important;
+        max-width: 360px !important;
+        margin: 0 auto 25px !important;
+      }
+
+      #fullpage .home .content .frase img.fras {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        opacity: 1 !important;
+        margin: 0 auto !important;
+      }
+
+      /* La nueva frase ya incluye el mensaje completo. */
+      #fullpage .home .content .frase .haz-tu-pedido {
+        display: none !important;
+      }
+
+      /* 4 accesos: más grandes y compactos */
+      #fullpage .home .content .nav-dos {
+        width: 100% !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(95px, 1fr)) !important;
+        gap: 20px 10px !important;
+        justify-items: center !important;
+        align-items: start !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 105px !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        display: block !important;
+        width: 72px !important;
+        max-width: 72px !important;
+        height: 72px !important;
+        max-height: 72px !important;
+        object-fit: contain !important;
+        margin: 0 auto 2px !important;
+      }
+
+      #fullpage .home .content .nav-dos a .sombrita {
+        display: block !important;
+        width: 70px !important;
+        height: 11px !important;
+        margin: -1px auto 4px !important;
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        color: #d7ff00 !important;
+        font-size: 15px !important;
+        line-height: 17px !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* iPhone / Android 375–430px */
+    @media screen and (min-width: 375px) and (max-width: 430px) {
+
+      #fullpage .home .content {
+        width: 69% !important;
+        top: 21% !important;
+        right: -1% !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 90% !important;
+        margin-bottom: 20px !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        gap: 17px 5px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: 66px !important;
+        max-width: 66px !important;
+        height: 66px !important;
+        max-height: 66px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 13px !important;
+        line-height: 15px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 49% !important;
+        max-width: 245px !important;
+        left: -7% !important;
+      }
+    }
+
+    /* Teléfonos pequeños 320–374px */
+    @media screen and (max-width: 374px) {
+
+      #fullpage .home .content {
+        width: 72% !important;
+        top: 20% !important;
+        right: -2% !important;
+        padding-right: 2% !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 88% !important;
+        margin-bottom: 15px !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        grid-template-columns: repeat(2, minmax(80px, 1fr)) !important;
+        gap: 13px 2px !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 86px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: 58px !important;
+        max-width: 58px !important;
+        height: 58px !important;
+        max-height: 58px !important;
+      }
+
+      #fullpage .home .content .nav-dos a .sombrita {
+        width: 56px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 11px !important;
+        line-height: 13px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 51% !important;
+        max-width: 210px !important;
+        left: -10% !important;
+      }
+    }
+
+    /* Teléfonos de poca altura */
+    @media screen and (max-width: 750px) and (max-height: 700px) {
+
+      #fullpage .home .content {
+        top: 18% !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 78% !important;
+        margin-bottom: 10px !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        gap: 9px 3px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: 52px !important;
+        max-width: 52px !important;
+        height: 52px !important;
+        max-height: 52px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 10px !important;
+        line-height: 12px !important;
+      }
+
+      #fullpage .home .pareja {
+        max-height: 67% !important;
+      }
+
+      #fullpage .home .pareja img {
+        max-height: 67vh !important;
+      }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — RESPONSIVE VISUAL V2
+       Desktop: elementos proporcionales al viewport.
+       Mobile: frase -> personajes -> accesos, sin cortes.
+       ============================================================ */
+
+    /* ---------- ESCRITORIO / LAPTOP ---------- */
+    @media screen and (min-width: 751px) {
+
+      #fullpage .home {
+        overflow: hidden !important;
+      }
+
+      #fullpage .home .pareja {
+        display: block !important;
+        width: clamp(360px, 34vw, 650px) !important;
+        max-width: none !important;
+        left: clamp(15px, 3vw, 65px) !important;
+        bottom: -5px !important;
+        z-index: 2 !important;
+      }
+
+      #fullpage .home .pareja img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: none !important;
+        object-fit: contain !important;
+      }
+
+      #fullpage .home .content {
+        width: clamp(560px, 55vw, 950px) !important;
+        right: clamp(10px, 3vw, 60px) !important;
+        left: auto !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: clamp(390px, 32vw, 610px) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: clamp(520px, 44vw, 760px) !important;
+        max-width: none !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: clamp(76px, 7vw, 115px) !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: clamp(14px, 1.15vw, 21px) !important;
+        line-height: 1.1 !important;
+      }
+    }
+
+    /* ---------- TABLET ---------- */
+    @media screen and (min-width: 751px) and (max-width: 1050px) {
+
+      #fullpage .home .pareja {
+        width: 38vw !important;
+        left: 0 !important;
+      }
+
+      #fullpage .home .content {
+        width: 62vw !important;
+        right: 0 !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 42vw !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: 56vw !important;
+      }
+    }
+
+    /* ---------- TELÉFONO ----------
+       Cambiamos la composición: todo fluye verticalmente.
+       La pareja aparece JUSTO DEBAJO de la frase.
+    */
+    @media screen and (max-width: 750px) {
+
+      html,
+      body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+
+      #fullpage,
+      #fullpage .fp-section,
+      #fullpage .fp-tableCell {
+        height: auto !important;
+        min-height: 100% !important;
+      }
+
+      #fullpage .home {
+        height: auto !important;
+        min-height: 100svh !important;
+        overflow: visible !important;
+        padding: 118px 0 35px !important;
+        box-sizing: border-box !important;
+      }
+
+      #fullpage .home .fp-tableCell {
+        display: block !important;
+        height: auto !important;
+      }
+
+      /* Content deja de estar flotando a la derecha */
+      #fullpage .home .content {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 18px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        z-index: 3 !important;
+      }
+
+      /* FRASE ARRIBA */
+      #fullpage .home .content .frase {
+        order: 1 !important;
+        width: min(82vw, 350px) !important;
+        max-width: 350px !important;
+        margin: 18px auto 12px !important;
+      }
+
+      #fullpage .home .content .frase img.fras {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+      }
+
+      #fullpage .home .content .frase .haz-tu-pedido {
+        display: none !important;
+      }
+
+      /* PERSONAJES: debajo de la frase, sin cortar cabezas */
+      #fullpage .home .pareja {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: min(72vw, 300px) !important;
+        max-width: 300px !important;
+        height: auto !important;
+        margin: 0 auto 10px !important;
+        z-index: 2 !important;
+      }
+
+      #fullpage .home .pareja img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
+
+      /* El HTML tiene .pareja antes de .content.
+         En móvil usamos flex en la celda para imponer:
+         frase/contenido y pareja de forma visual compacta. */
+      #fullpage .home .fp-tableCell {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      #fullpage .home .content {
+        order: 1 !important;
+      }
+
+      #fullpage .home .pareja {
+        order: 2 !important;
+      }
+
+      /* Los accesos quedan después de los personajes visualmente
+         mediante margen superior negativo controlado no; mantenemos
+         separación limpia y botones grandes. */
+      #fullpage .home .content .nav-dos {
+        order: 3 !important;
+        width: min(92vw, 380px) !important;
+        max-width: 380px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px 22px !important;
+        margin: 12px auto 0 !important;
+        padding: 0 !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: clamp(72px, 22vw, 92px) !important;
+        height: clamp(72px, 22vw, 92px) !important;
+        max-width: 92px !important;
+        max-height: 92px !important;
+        margin: 0 auto 2px !important;
+        object-fit: contain !important;
+      }
+
+      #fullpage .home .content .nav-dos a .sombrita {
+        width: 78px !important;
+        height: 12px !important;
+        margin: -2px auto 4px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: clamp(13px, 3.8vw, 16px) !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    /* Para conseguir realmente frase -> personajes -> botones
+       en móvil, movemos visualmente los botones hacia abajo dejando
+       el espacio exacto que ocupa la pareja. */
+    @media screen and (max-width: 750px) {
+
+      #fullpage .home .content {
+        padding-bottom: min(76vw, 315px) !important;
+      }
+
+      #fullpage .home .pareja {
+        margin-top: calc(-1 * min(76vw, 315px)) !important;
+        margin-bottom: 12px !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        transform: translateY(min(76vw, 315px)) !important;
+      }
+    }
+
+    /* ---------- 375–430px ---------- */
+    @media screen and (min-width: 375px) and (max-width: 430px) {
+
+      #fullpage .home {
+        padding-top: 112px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 78vw !important;
+        margin-top: 14px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 68vw !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: 88vw !important;
+        gap: 15px 18px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: 82px !important;
+        height: 82px !important;
+      }
+    }
+
+    /* ---------- 320–374px ---------- */
+    @media screen and (max-width: 374px) {
+
+      #fullpage .home {
+        padding-top: 106px !important;
+      }
+
+      #fullpage .home .content {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: 76vw !important;
+        margin-top: 10px !important;
+      }
+
+      #fullpage .home .pareja {
+        width: 65vw !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: 92vw !important;
+        gap: 12px 8px !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: 70px !important;
+        height: 70px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        font-size: 12px !important;
+      }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — HOME RESPONSIVE ESTRUCTURAL FINAL
+       ============================================================ */
+
+    .pareja-mobile { display: none !important; }
+
+    @media screen and (min-width: 751px) {
+      #fullpage .home { position: relative !important; overflow: hidden !important; }
+
+      #fullpage .home .pareja-desktop {
+        display: block !important;
+        position: absolute !important;
+        width: clamp(390px, 34vw, 660px) !important;
+        max-width: none !important;
+        left: clamp(20px, 3.5vw, 75px) !important;
+        bottom: -5px !important;
+        margin: 0 !important;
+        z-index: 2 !important;
+      }
+
+      #fullpage .home .pareja-desktop img {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      #fullpage .home .pareja-mobile { display: none !important; }
+
+      #fullpage .home .content {
+        position: absolute !important;
+        width: clamp(560px, 55vw, 940px) !important;
+        height: auto !important;
+        right: clamp(15px, 3vw, 60px) !important;
+        left: auto !important;
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-43%) !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      #fullpage .home .content .frase {
+        width: clamp(400px, 32vw, 610px) !important;
+        max-width: none !important;
+        margin: 0 auto 28px !important;
+      }
+
+      #fullpage .home .content .frase img.fras {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        width: clamp(540px, 45vw, 780px) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        transform: none !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        width: clamp(82px, 7vw, 120px) !important;
+        height: auto !important;
+        max-width: none !important;
+        max-height: none !important;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      html, body { width: 100% !important; max-width: 100% !important; overflow-x: hidden !important; }
+
+      #fullpage, #fullpage .section, #fullpage .fp-tableCell { height: auto !important; }
+
+      #fullpage .home {
+        position: relative !important;
+        height: auto !important;
+        min-height: 100svh !important;
+        overflow: visible !important;
+        padding: 112px 0 38px !important;
+        box-sizing: border-box !important;
+      }
+
+      #fullpage .home .fp-tableCell { display: block !important; height: auto !important; }
+      #fullpage .home .pareja-desktop { display: none !important; }
+
+      #fullpage .home .content {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: auto !important;
+        top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
+        transform: none !important;
+        padding: 0 14px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #fullpage .home .content .frase {
+        order: 1 !important;
+        width: min(82vw, 355px) !important;
+        max-width: 355px !important;
+        margin: 16px auto 12px !important;
+      }
+
+      #fullpage .home .content .frase img.fras {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      #fullpage .home .content .frase .haz-tu-pedido { display: none !important; }
+
+      #fullpage .home .content .pareja-mobile {
+        order: 2 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        width: min(68vw, 285px) !important;
+        max-width: 285px !important;
+        height: auto !important;
+        top: auto !important; right: auto !important; bottom: auto !important; left: auto !important;
+        margin: 0 auto 14px !important;
+        z-index: 2 !important;
+      }
+
+      #fullpage .home .content .pareja-mobile img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+      }
+
+      #fullpage .home .content .nav-dos {
+        order: 3 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: min(92vw, 390px) !important;
+        max-width: 390px !important;
+        gap: 18px 18px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        transform: none !important;
+      }
+
+      #fullpage .home .content .nav-dos a {
+        width: 100% !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
+      }
+
+      #fullpage .home .content .nav-dos a img.me-img {
+        display: block !important;
+        width: clamp(76px, 22vw, 94px) !important;
+        height: clamp(76px, 22vw, 94px) !important;
+        max-width: 94px !important;
+        max-height: 94px !important;
+        margin: 0 auto 2px !important;
+        object-fit: contain !important;
+      }
+
+      #fullpage .home .content .nav-dos a .sombrita {
+        width: 78px !important;
+        height: 12px !important;
+        margin: -2px auto 4px !important;
+      }
+
+      #fullpage .home .content .nav-dos a h2 {
+        margin: 0 !important;
+        color: #d7ff00 !important;
+        font-size: clamp(13px, 3.7vw, 16px) !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+      }
+    }
+
+    @media screen and (max-width: 374px) {
+      #fullpage .home { padding-top: 104px !important; }
+      #fullpage .home .content { padding-left: 8px !important; padding-right: 8px !important; }
+      #fullpage .home .content .frase { width: 78vw !important; margin-top: 10px !important; }
+      #fullpage .home .content .pareja-mobile { width: 64vw !important; margin-bottom: 10px !important; }
+      #fullpage .home .content .nav-dos { width: 92vw !important; gap: 12px 8px !important; }
+      #fullpage .home .content .nav-dos a img.me-img { width: 70px !important; height: 70px !important; }
+      #fullpage .home .content .nav-dos a h2 { font-size: 12px !important; }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — LOGO ÚNICO, FIJO Y SIN EFECTOS
+       ============================================================ */
+
+    #fullpage header .logo {
+        position: relative !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 150px !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 5px 10px !important;
+        background: transparent !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #fullpage header .logo img {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        max-width: 130px !important;
+        max-height: 80px !important;
+        object-fit: contain !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    @media screen and (max-width: 900px) {
+        #fullpage header .logo {
+            width: 125px !important;
+        }
+
+        #fullpage header .logo img {
+            max-width: 110px !important;
+            max-height: 65px !important;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        #fullpage header .logo {
+            width: 105px !important;
+            height: 58px !important;
+            padding: 4px 6px !important;
+        }
+
+        #fullpage header .logo img {
+            max-width: 92px !important;
+            max-height: 50px !important;
+        }
+    }
+
+    @media screen and (max-width: 374px) {
+        #fullpage header .logo {
+            width: 90px !important;
+        }
+
+        #fullpage header .logo img {
+            max-width: 78px !important;
+            max-height: 46px !important;
+        }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — HEADER SIEMPRE VISIBLE, MISMO TAMAÑO
+       Este bloque debe permanecer al FINAL del archivo.
+       ============================================================ */
+
+    #fullpage header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: flex !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 999999 !important;
+        will-change: auto !important;
+    }
+
+    /* Neutraliza el antiguo estado de scroll */
+    #fullpage header.header2 {
+        top: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* El único logo permanece visible */
+    #fullpage header .logo {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    #fullpage header .logo img {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Los logos antiguos ya no se utilizan */
+    #fullpage header .logo2,
+    #fullpage header .logo3 {
+        display: none !important;
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — DRIVE FONO SIEMPRE VISIBLE
+       Mantener este bloque al FINAL del archivo.
+       ============================================================ */
+
+    #fullpage header .telf,
+    #fullpage header .telf2,
+    header .telf,
+    header .telf2 {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* En móvil tampoco debe desaparecer ni cambiar por el scroll */
+    @media screen and (max-width: 750px) {
+        #fullpage header .telf,
+        #fullpage header .telf2,
+        header .telf,
+        header .telf2 {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            animation: none !important;
+            transition: none !important;
+        }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — TELÉFONO SUPERIOR SIEMPRE VISIBLE
+       IMPORTANTE: .telf NO está dentro del header; es hermano del header.
+       Mantener este bloque al FINAL del archivo.
+       ============================================================ */
+
+    #fullpage > a[href^="tel:"] {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000001 !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    #fullpage > a[href^="tel:"] > .telf,
+    #fullpage .telf {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 1000002 !important;
+    }
+
+    /* El header permanece fijo debajo de la franja telefónica */
+    #fullpage > header,
+    #fullpage header {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 1000000 !important;
+    }
+
+    /* El logo nunca desaparece */
+    #fullpage header .logo,
+    #fullpage header .logo img {
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Logos antiguos eliminados */
+    #fullpage header .logo2,
+    #fullpage header .logo3 {
+        display: none !important;
+    }
+
+    /* En móviles se conserva el teléfono superior */
+    @media screen and (max-width: 750px) {
+        #fullpage > a[href^="tel:"],
+        #fullpage > a[href^="tel:"] > .telf,
+        #fullpage .telf {
+            position: fixed !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — DIVER-FONO CENTRADO
+       Mantener este bloque al FINAL del archivo.
+       ============================================================ */
+
+    #fullpage > a.telefono-superior {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 1000002 !important;
+    }
+
+    #fullpage > a.telefono-superior > .telf {
+        position: relative !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        display: block !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 1000003 !important;
+    }
+
+    /* Mantiene el encabezado estable */
+    #fullpage > header,
+    #fullpage header {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Móvil */
+    @media screen and (max-width: 750px) {
+
+        #fullpage > a.telefono-superior {
+            width: 100% !important;
+            justify-content: center !important;
+        }
+
+        #fullpage > a.telefono-superior > .telf {
+            width: auto !important;
+            max-width: calc(100vw - 20px) !important;
+            margin: 0 auto !important;
+            text-align: center !important;
+            white-space: normal !important;
+        }
+    }
+
+
+    /* ============================================================
+       ESTACIÓN 180 — HEADER FINAL
+       Logo + DIVER-FONO + navegación en una sola cabecera.
+       DIVER-FONO queda centrado REALMENTE dentro del header.
+       Mantener este bloque al FINAL del archivo.
+       ============================================================ */
+
+    #fullpage > header,
+    #fullpage header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 1000000 !important;
+        will-change: auto !important;
+    }
+
+    /* Logo izquierdo */
+    #fullpage header .logo-link {
+        position: relative !important;
+        flex: 0 0 auto !important;
+        display: block !important;
+        z-index: 20 !important;
+    }
+
+    #fullpage header .logo,
+    #fullpage header .logo img {
+        opacity: 1 !important;
+        visibility: visible !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* DIVER-FONO: centro geométrico del header */
+    #fullpage header > a.telefono-superior {
+        position: absolute !important;
+
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+
+        width: auto !important;
+        height: auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: translate(-50%, -50%) !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+
+        z-index: 30 !important;
+    }
+
+    #fullpage header > a.telefono-superior > .telf {
+        position: static !important;
+
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+
+        width: auto !important;
+        max-width: none !important;
+        height: auto !important;
+
+        display: block !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+        white-space: nowrap !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+        translate: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+
+    /* Navegación derecha */
+    #fullpage header .nav {
+        position: relative !important;
+        margin-left: auto !important;
+        z-index: 20 !important;
+    }
+
+    /* Los logos antiguos quedan anulados */
+    #fullpage header .logo2,
+    #fullpage header .logo3 {
+        display: none !important;
+    }
+
+    /* En pantallas pequeñas permitimos que el teléfono reduzca su ancho
+       sin salir de la cabecera. */
+    @media screen and (max-width: 750px) {
+        #fullpage header > a.telefono-superior {
+            left: 50% !important;
+            max-width: 52vw !important;
+        }
+
+        #fullpage header > a.telefono-superior > .telf {
+            max-width: 52vw !important;
+            white-space: normal !important;
+            line-height: 1.1 !important;
+        }
+    }
+    /* ============================================================
+       CORRECCIÓN FINAL - SECCIÓN CONTACTOS
+       ESTACIÓN 180
+       PEGAR AL FINAL DE index.css
+       ============================================================ */
+
+
+    /* ============================================================
+       ESCRITORIO
+       ============================================================ */
+
+    @media screen and (min-width: 751px) {
+
+        /* SECCIÓN COMPLETA */
+        #fullpage .contactos {
+            position: relative !important;
+            height: 100vh !important;
+            min-height: 700px !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
+        }
+
+
+        /* CELDA QUE CREA FULLPAGE */
+        #fullpage .contactos .fp-tableCell {
+            position: relative !important;
+            height: 100vh !important;
+            min-height: 700px !important;
+            vertical-align: top !important;
+        }
+
+
+        /* CONTENEDOR DEL FORMULARIO Y DATOS */
+        #fullpage .contactos .wrapp {
+            position: relative !important;
+
+            width: 84% !important;
+            max-width: 1280px !important;
+
+            height: auto !important;
+            min-height: 0 !important;
+
+            margin: 0 auto !important;
+
+            /* deja espacio para el header */
+            padding: 125px 0 120px !important;
+
+            box-sizing: border-box !important;
+
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+        }
+
+
+        /* ========================================================
+           FORMULARIO
+           ======================================================== */
+
+        #fullpage .contactos .wrapp .formulario {
+            position: relative !important;
+
+            width: 410px !important;
+            height: auto !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            top: auto !important;
+            left: auto !important;
+
+            transform: none !important;
+        }
+
+
+        /* TÍTULO CONTÁCTANOS */
+        #fullpage .contactos .wrapp .formulario .lazo {
+            position: relative !important;
+
+            display: block !important;
+
+            width: 100% !important;
+            height: 50px !important;
+
+            margin: 0 !important;
+            padding: 10px 0 0 !important;
+
+            box-sizing: border-box !important;
+
+            opacity: 1 !important;
+            visibility: visible !important;
+
+            top: auto !important;
+            left: auto !important;
+
+            z-index: 2 !important;
+        }
+
+
+        /* FORMULARIO */
+        #fullpage .contactos .wrapp .formulario form {
+            width: 100% !important;
+            height: auto !important;
+
+            margin: 42px 0 0 !important;
+            padding: 0 !important;
+        }
+
+
+        /* ========================================================
+           INFORMACIÓN DERECHA
+           ======================================================== */
+
+        #fullpage .contactos .wrapp .contact {
+            position: relative !important;
+
+            width: 400px !important;
+            height: auto !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+
+            transform: none !important;
+
+            text-align: center !important;
+        }
+
+
+        /* ========================================================
+           FOOTER
+           ======================================================== */
+
+        #fullpage .contactos footer {
+            position: absolute !important;
+
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+
+            width: 100% !important;
+            height: auto !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            box-sizing: border-box !important;
+
+            z-index: 10 !important;
+        }
+
+
+        /* TEXTO:
+           TOMAR BEBIDAS ALCOHÓLICAS...
+        */
+
+        #fullpage .contactos footer .legal {
+            position: relative !important;
+
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+
+            width: 100% !important;
+            min-height: 74px !important;
+
+            margin: 0 !important;
+            padding: 18px 30px !important;
+
+            box-sizing: border-box !important;
+
+            text-align: center !important;
+            line-height: 1.25 !important;
+
+            transform: none !important;
+        }
+
+
+        /* FRANJA INFERIOR */
+        #fullpage .contactos footer .derechos {
+            position: relative !important;
+
+            width: 100% !important;
+            min-height: 44px !important;
+
+            margin: 0 !important;
+            padding: 14px 20px !important;
+
+            box-sizing: border-box !important;
+
+            text-align: left !important;
+        }
+
+
+        /* DISEÑADO POR */
+        #fullpage .contactos footer .medstudio {
+            position: absolute !important;
+
+            right: 15px !important;
+            bottom: 14px !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+
+    /* ============================================================
+       LAPTOPS CON MENOR ALTURA
+       ============================================================ */
+
+    @media screen and (min-width: 751px) and (max-height: 760px) {
+
+        #fullpage .contactos .wrapp {
+            padding-top: 110px !important;
+            padding-bottom: 100px !important;
+        }
+
+        #fullpage .contactos .wrapp .formulario form {
+            margin-top: 30px !important;
+        }
+
+        #fullpage .contactos .wrapp .formulario form textarea {
+            height: 90px !important;
+            max-height: 90px !important;
+        }
+
+        #fullpage .contactos footer .legal {
+            min-height: 58px !important;
+            padding: 12px 20px !important;
+        }
+
+        #fullpage .contactos footer .derechos {
+            min-height: 38px !important;
+            padding: 11px 20px !important;
+        }
+
+        #fullpage .contactos footer .medstudio {
+            bottom: 11px !important;
+        }
+    }
+
+
+    /* ============================================================
+       CELULAR / TABLET
+       ============================================================ */
+
+    @media screen and (max-width: 750px) {
+
+        #fullpage .contactos {
+            position: relative !important;
+
+            height: auto !important;
+            min-height: 100vh !important;
+            min-height: 100svh !important;
+
+            overflow: visible !important;
+
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+
+        #fullpage .contactos .fp-tableCell {
+            position: relative !important;
+
+            height: auto !important;
+            min-height: 100vh !important;
+            min-height: 100svh !important;
+
+            vertical-align: top !important;
+        }
+
+
+        #fullpage .contactos .wrapp {
+            position: relative !important;
+
+            width: 100% !important;
+            max-width: 100% !important;
+
+            height: auto !important;
+            min-height: 0 !important;
+
+            margin: 0 auto !important;
+
+            padding: 90px 18px 30px !important;
+
+            box-sizing: border-box !important;
+
+            display: flex !important;
+            flex-direction: column !important;
+
+            align-items: center !important;
+            justify-content: flex-start !important;
+        }
+
+
+        /* FORMULARIO */
+        #fullpage .contactos .wrapp .formulario {
+            position: relative !important;
+
+            width: 100% !important;
+            max-width: 410px !important;
+
+            height: auto !important;
+
+            margin: 0 auto 35px !important;
+            padding: 0 !important;
+
+            top: auto !important;
+            left: auto !important;
+
+            transform: none !important;
+        }
+
+
+        /* CONTÁCTANOS */
+        #fullpage .contactos .wrapp .formulario .lazo {
+            position: relative !important;
+
+            display: block !important;
+
+            width: 100% !important;
+
+            margin: 0 !important;
+
+            opacity: 1 !important;
+            visibility: visible !important;
+
+            top: auto !important;
+            left: auto !important;
+
+            z-index: 2 !important;
+        }
+
+
+        #fullpage .contactos .wrapp .formulario form {
+            width: 100% !important;
+
+            margin: 42px 0 0 !important;
+        }
+
+
+        /* INFORMACIÓN */
+        #fullpage .contactos .wrapp .contact {
+            position: relative !important;
+
+            width: 100% !important;
+            max-width: 400px !important;
+
+            height: auto !important;
+
+            margin: 0 auto 30px !important;
+            padding: 0 !important;
+
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+
+            transform: none !important;
+
+            text-align: center !important;
+        }
+
+
+        /* FOOTER EN MÓVIL YA NO ES ABSOLUTO */
+        #fullpage .contactos footer {
+            position: relative !important;
+
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+
+            width: 100% !important;
+            height: auto !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+
+        /* AVISO LEGAL */
+        #fullpage .contactos footer .legal {
+            display: flex !important;
+
+            align-items: center !important;
+            justify-content: center !important;
+
+            width: 100% !important;
+
+            margin: 0 !important;
+            padding: 20px 15px !important;
+
+            box-sizing: border-box !important;
+
+            text-align: center !important;
+
+            letter-spacing: 4px !important;
+            line-height: 1.35 !important;
+        }
+
+
+        /* DERECHOS */
+        #fullpage .contactos footer .derechos {
+            width: 100% !important;
+
+            margin: 0 !important;
+
+            padding: 13px 12px 5px !important;
+
+            box-sizing: border-box !important;
+
+            text-align: center !important;
+        }
+
+
+        /* DISEÑADO POR */
+        #fullpage .contactos footer .medstudio {
+            position: relative !important;
+
+            right: auto !important;
+            bottom: auto !important;
+
+            width: 100% !important;
+
+            margin: 0 !important;
+
+            padding: 5px 12px 13px !important;
+
+            box-sizing: border-box !important;
+
+            text-align: center !important;
+        }
+    }
+
+    /* =====================================================================
+       ESTACIÓN 180 — CORRECCIÓN FINAL CONTACTOS
+       TÍTULO + CAMPOS + MENSAJE + BOTÓN + FOOTER
+       ===================================================================== */
+
+    @media screen and (min-width: 751px) {
+
+        #fullpage .section.contactos {
+            position: relative !important;
+            height: 100vh !important;
+            min-height: 720px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            box-sizing: border-box !important;
+        }
+
+        #fullpage .contactos .fp-tableCell {
+            position: relative !important;
+            height: 100vh !important;
+            min-height: 720px !important;
+            vertical-align: top !important;
+        }
+
+        #fullpage .contactos .wrapp {
+            position: relative !important;
+            width: 84% !important;
+            max-width: 1200px !important;
+            height: auto !important;
+            min-height: 0 !important;
+            margin: 0 auto !important;
+            padding: 115px 0 120px !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: flex-start !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .formulario {
+            position: relative !important;
+            display: block !important;
+            width: 410px !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            top: auto !important;
+            left: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .formulario .lazo {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: 48px !important;
+            margin: 0 0 20px 0 !important;
+            padding: 8px 20px !important;
+            box-sizing: border-box !important;
+            color: #d7ff00 !important;
+            font-family: bombardier !important;
+            font-size: 28px !important;
+            line-height: 32px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            overflow: visible !important;
+            z-index: 50 !important;
+        }
+
+        #fullpage .contactos .formulario form {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .formulario form input[type="text"],
+        #fullpage .contactos .formulario form input[type="tel"],
+        #fullpage .contactos .formulario form input[type="email"] {
+            display: block !important;
+            width: 100% !important;
+            height: 38px !important;
+            margin: 0 0 8px 0 !important;
+            padding: 7px 10px !important;
+            box-sizing: border-box !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #fullpage .contactos .formulario form textarea,
+        #fullpage .contactos .formulario form #mensaje {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            height: 105px !important;
+            min-height: 105px !important;
+            max-height: 105px !important;
+            margin: 0 0 10px 0 !important;
+            padding: 10px !important;
+            box-sizing: border-box !important;
+            resize: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            overflow: auto !important;
+            transform: none !important;
+        }
+
+        #fullpage .contactos .formulario form textarea::placeholder {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #fullpage .contactos .formulario form #enviar {
+            display: block !important;
+            width: 100% !important;
+            height: 38px !important;
+            margin: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #fullpage .contactos .contact {
+            position: relative !important;
+            display: block !important;
+            width: 400px !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+
+        #fullpage .contactos footer {
+            position: absolute !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #fullpage .contactos footer .legal {
+            width: 100% !important;
+            margin: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            box-sizing: border-box !important;
+        }
+    }
+
+    @media screen and (min-width: 751px) and (max-height: 760px) {
+
+        #fullpage .section.contactos {
+            min-height: 650px !important;
+            overflow-y: auto !important;
+        }
+
+        #fullpage .contactos .wrapp {
+            padding-top: 105px !important;
+            padding-bottom: 105px !important;
+        }
+
+        #fullpage .contactos .formulario .lazo {
+            margin-bottom: 12px !important;
+        }
+
+        #fullpage .contactos .formulario form textarea,
+        #fullpage .contactos .formulario form #mensaje {
+            height: 85px !important;
+            min-height: 85px !important;
+            max-height: 85px !important;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+
+        #fullpage .section.contactos {
+            height: auto !important;
+            min-height: 100vh !important;
+            min-height: 100svh !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .wrapp {
+            height: auto !important;
+            padding: 90px 18px 30px !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .formulario {
+            display: block !important;
+            width: 100% !important;
+            max-width: 410px !important;
+            height: auto !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            overflow: visible !important;
+        }
+
+        #fullpage .contactos .formulario .lazo {
+            position: relative !important;
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 0 20px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+
+        #fullpage .contactos .formulario form {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            margin: 0 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #fullpage .contactos .formulario form textarea,
+        #fullpage .contactos .formulario form #mensaje {
+            display: block !important;
+            width: 100% !important;
+            height: 110px !important;
+            min-height: 110px !important;
+            margin-bottom: 10px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        #fullpage .contactos footer {
+            position: relative !important;
+            width: 100% !important;
+            bottom: auto !important;
+        }
+
+        #fullpage .contactos footer .legal {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+    }
