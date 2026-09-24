@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <section class="titulo-tienda">
          <p class="welcome2">COMBOS<span class="tri-rojo"></span></p>
-         <p class="zona-diverchopp">Solicita el Whisky que deseas disfrutar, nosotros te lo llevamos a tu </p>
+         <p class="zona-diverchopp">Elige tu promo favorita. Nosotros te la llevamos </p>
       </section>
 
       <div class="tienda">
@@ -533,18 +533,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
   $(document).ready(function () {
-      $('.click-comprar').on('click', function (e) {
+
+      $('.click-comprar').off('click.estacion180').on('click.estacion180', function (e) {
           e.preventDefault();
+          e.stopImmediatePropagation();
+
+          var bloque = $(this).closest('.select-pro');
+          var item = $(this).closest('li');
+
+          var producto = $.trim(bloque.children('p').first().text());
+          var detalle = $.trim(item.find('.ok').first().text().replace(/\s+/g, ' '));
+          var precio = $.trim(item.find('.price').first().text());
+
+          var mensaje =
+              'Hola Estación 180, deseo realizar un pedido.\n\n' +
+              '*Producto:* ' + producto + '\n' +
+              '*Detalle:* ' + detalle + '\n' +
+              '*Precio:* ' + precio;
+
+          var urlWhatsApp =
+              'https://wa.me/51999014976?text=' + encodeURIComponent(mensaje);
+
+          /* Mantiene el modal de agradecimiento */
           $('.modal-compra').fadeIn('fast');
           $('.wrap-comprar-modal').addClass('animated fadeInUp');
           $('body').css('overflowY', 'hidden');
+
+          /* Abre WhatsApp con combo, detalle y precio */
+          setTimeout(function () {
+              window.open(urlWhatsApp, '_blank');
+          }, 350);
       });
 
-      $('.out-compra').on('click', function () {
+      $('.out-compra').off('click.estacion180').on('click.estacion180', function () {
           $('.modal-compra').fadeOut('fast');
           $('.wrap-comprar-modal').removeClass('animated fadeInUp');
           $('body').css('overflowY', 'visible');
       });
+
   });
   </script>
 
