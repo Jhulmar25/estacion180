@@ -50,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="out-compra">X</span>
         <div class="sub">
            <div class="wrap-comprar-modal">
-            <p>¡GRACIAS POR ELEGIR</p>
+            <p>¡GRACIAS POR ELEGIR!</p>
 
              <p class="solicita">SOLICITA TU PEDIDO</p>
              <P class="number">LLAMANDO AL: 999 014 976</P>
@@ -58,7 +58,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              <div class="lo-llevamos">
                 <img src="img/bar/zona-bar.png" alt="delivery de cervezas">
                 <p class="nos">
-                   <span>Nosotros lo llevamos a tu ubicación</span>
+                   <span>Nosotros te lo llevamos</span>
 
                 </p>
              </div>
@@ -173,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <section class="titulo-tienda">
                  <p class="welcome2">SNACKS<span class="tri-rojo"></span></p>
-                 <p class="zona-diverchopp">Solicita el Snack que deseas disfrutar, nosotros te lo llevamos </p>
+                 <p class="zona-diverchopp">Solicita el Snack que deseas disfrutar, nosotros lo llevamos a tu <span>Zona Diverchopp</span></p>
               </section>
 
               <div class="tienda">
@@ -375,5 +375,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
     </style>
 
-	</body>
+	
+    <!-- COMPRA DIRECTA POR WHATSAPP - ESTACIÓN 180 -->
+    <script>
+    $(document).ready(function () {
+
+        $('.click-comprar').off('click.estacion180').on('click.estacion180', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            var item = $(this).closest('li');
+            var bloque = $(this).closest('.select-pro');
+
+            var marca = $.trim(bloque.children('p').first().text());
+            var producto = $.trim(item.find('.nom-pro').first().text());
+            var precio = $.trim(item.find('.price').first().text().replace(/\s+/g, ' '));
+
+            var mensaje =
+                'Hola Estación 180, deseo realizar un pedido.\n\n' +
+                '*Categoría:* ' + marca + '\n' +
+                '*Producto:* ' + producto + '\n' +
+                '*Precio:* ' + precio;
+
+            var urlWhatsApp =
+                'https://wa.me/51999014976?text=' + encodeURIComponent(mensaje);
+
+            /* Mantiene el modal de agradecimiento */
+            $('.modal-compra').fadeIn('fast');
+            $('.wrap-comprar-modal').addClass('animated fadeInUp');
+
+            /* Abre WhatsApp con categoría, producto y precio */
+            setTimeout(function () {
+                window.open(urlWhatsApp, '_blank');
+            }, 350);
+        });
+
+    });
+    </script>
+
+</body>
 </html>
