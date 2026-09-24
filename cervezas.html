@@ -173,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <section class="titulo-tienda">
                  <p class="welcome2">CERVEZAS<span class="tri-rojo"></span></p>
-                 <p class="zona-diverchopp">Solicita la Cerveza que deseas disfrutar, nosotros te lo llevamos</p>
+                 <p class="zona-diverchopp">Solicita la Cerveza que deseas disfrutar, nosotros te lo llevamos. </p>
               </section>
               <div class="tienda">
                   <span class="buscar-trago">
@@ -481,6 +481,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     }
     </style>
+
+
+    <!-- COMPRA DIRECTA POR WHATSAPP - ESTACIÓN 180 -->
+    <script>
+    $(document).ready(function () {
+        $('.click-comprar').off('click.estacion180').on('click.estacion180', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            var producto = $.trim($(this).closest('li').find('.nom-pro').first().text());
+            var precio = $.trim($(this).closest('li').find('.price').first().text());
+
+            var mensaje =
+                'Hola Estación 180, deseo realizar un pedido.\n\n' +
+                '*Producto:* ' + producto + '\n' +
+                '*Precio:* ' + precio;
+
+            var urlWhatsApp =
+                'https://wa.me/51999014976?text=' + encodeURIComponent(mensaje);
+
+            $('.modal-compra').fadeIn('fast');
+            $('.wrap-comprar-modal').addClass('animated fadeInUp');
+
+            setTimeout(function () {
+                window.open(urlWhatsApp, '_blank');
+            }, 350);
+        });
+    });
+    </script>
 
 </body>
 </html>
