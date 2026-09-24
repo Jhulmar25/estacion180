@@ -51,15 +51,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sub">
            <div class="wrap-comprar-modal">
              <p>¡GRACIAS POR ELEGIR!</p>
-             <img src="img/bar/logo-bar.png" alt="Estación 180 - Complementos">
+             
              <p class="solicita">SOLICITA TU PEDIDO</p>
-             <P class="number">LLAMANDO AL: (01) 606-8867 / 955-054-097</P>
-             <a class="boton-llamar" href="tel://999014976 "><span></span>LLAMAR</a>
+             <P class="number">LLAMANDO AL: 999 014 976</P>
+             <a class="boton-llamar" href="tel://999014976"><span></span>LLAMAR</a>
              <div class="lo-llevamos">
                 <img src="img/bar/zona-bar.png" alt="Estación 180 - Complementos">
                 <p class="nos">
-                   <span>Nosotros lo llevamos a tu</span>
-                   <span class="diverzona">Zona Diverchop</span>
+                   <span>Nosotros te lo llevamos</span>
+                   
                 </p>
              </div>
            </div>
@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              </div>
 
       
-              <a href="tel://999014976"><p class="telf2"><span>DIVER-FONO:</span> (01) 606-8867 / 955-054-097</p></a>
+              <a href="tel://999014976"><p class="telf2"><span>DIVER-FONO:</span> 999 014 976</p></a>
               <header>
                   <a href="index.html" class="logo-link">
                       <div class="logo">
@@ -174,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </div>
               <section class="titulo-tienda">
                  <p class="welcome2">COMPLEMENTOS<span class="tri-rojo"></span></p>
-                 <p class="zona-diverchopp">Solicita la bebida o complemento que deseas disfrutar, nosotros te lo llevamos </span></p>
+                 <p class="zona-diverchopp">Solicita la bebida o complemento que deseas disfrutar, nosotros te lo llevamos </p>
               </section>
               <div class="tienda">
                   <span class="buscar-trago">
@@ -542,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="contact">
                                     <div class="tel-con">
                                        <img src="img/moto.png" alt="Estación 180 - Complementos">
-                                       <a href="tel://999014976"><h2><span>DIVER-FONO:</span><br>(01) 606-8867 / 955-054-097</h2></a>
+                                       <a href="tel://999014976"><h2><span>DIVER-FONO:</span><br>999 014 976</h2></a>
                                     </div>
                                     <aside class="like-box">
                                             <div class="fb-page" data-href="https://www.facebook.com/DiverChopp/?fref=ts" data-tabs="timeline" data-width="400" data-height="210" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/DiverChopp/?fref=ts" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/DiverChopp/?fref=ts">DiverChopp</a></blockquote></div>
@@ -646,6 +646,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     }
     </style>
+
+
+    <!-- COMPRA DIRECTA POR WHATSAPP - ESTACIÓN 180 -->
+    <script>
+    $(document).ready(function () {
+
+        $('.click-comprar').off('click.estacion180').on('click.estacion180', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            var item = $(this).closest('li');
+            var bloque = $(this).closest('.select-pro');
+
+            var marca = $.trim(bloque.children('p').first().text());
+            var producto = $.trim(item.find('.nom-pro').first().text());
+            var precio = $.trim(item.find('.price').first().text().replace(/\s+/g, ' '));
+
+            var mensaje =
+                'Hola Estación 180, deseo realizar un pedido.\n\n' +
+                '*Categoría:* ' + marca + '\n' +
+                '*Producto:* ' + producto + '\n' +
+                '*Precio:* ' + precio;
+
+            var urlWhatsApp =
+                'https://wa.me/51999014976?text=' + encodeURIComponent(mensaje);
+
+            /* Mantiene el modal de agradecimiento */
+            $('.modal-compra').fadeIn('fast');
+            $('.wrap-comprar-modal').addClass('animated fadeInUp');
+
+            /* Abre WhatsApp con categoría, producto y precio */
+            setTimeout(function () {
+                window.open(urlWhatsApp, '_blank');
+            }, 350);
+        });
+
+    });
+    </script>
 
 </body>
 </html>
